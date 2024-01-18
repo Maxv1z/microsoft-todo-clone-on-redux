@@ -1,0 +1,58 @@
+{
+    "lists": [
+        {
+            "id": 1,
+            "name": "Home"
+        },
+        {
+            "id": 2,
+            "name": "Personal Tasks"
+        },
+        {
+            "id": 3,
+            "name": "Work Tasks"
+        }
+    ],
+    "todos": [
+        {
+            "id": 1,
+            "createdAt": "2024-01-17T12:00:00",
+            "timeToFinish": "1 hour",
+            "title": "Complete Front-End Project",
+            "notes": "Finish the coding and debugging for the project.",
+            "file": "project_code.zip",
+            "starred": true,
+            "listId": 1
+        },
+        {
+            "id": 2,
+            "createdAt": "2024-01-18T15:30:00",
+            "timeToFinish": "30 minutes",
+            "title": "Read Chapter 5 of Web Development Book",
+            "notes": "Focus on advanced front-end techniques.",
+            "file": "",
+            "starred": false,
+            "listId": 1
+        },
+        {
+            "id": 3,
+            "createdAt": "2024-01-20T09:00:00",
+            "timeToFinish": "2 hours",
+            "title": "Basketball Training",
+            "notes": "Practice one-arm pull-ups and rim dunks.",
+            "file": "",
+            "starred": true,
+            "listId": 1
+        },
+        {
+            "id": 4,
+            "createdAt": "2024-01-21T14:00:00",
+            "timeToFinish": "45 minutes",
+            "title": "French Language Study",
+            "notes": "Review vocabulary and practice listening.",
+            "file": "french_notes.txt",
+            "starred": false,
+            "listId": 2
+        }
+    ]
+}
