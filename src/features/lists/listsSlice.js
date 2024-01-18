@@ -22,37 +22,37 @@ export const listsApiSlice = apiSlice.injectEndpoints({
             },
             providesTags: ['Lists']
         }),
-        addList: builder.query({
+        addList: builder.mutation({
             query: (list) => ({
                 url: '/lists',
                 method: 'POST',
                 body: list
             }),
-            providesTags: ['Lists']
+            invalidatesTags: ['Lists']
         }),
-        updateList: builder.query({
+        updateList: builder.mutation({
             query: (list) => ({
                 url: "/lists",
                 method: 'POST',
                 body: list
             }),
-            providesTags: ['Lists']
+            invalidatesTags: ['Lists']
         }),
-        deleteList: builder.query({
+        deleteList: builder.mutation({
             query: () => ({
                 url: '/lists',
                 method: "DELETE"
             }),
-            providesTags: ['Lists']
+            invalidatesTags: ['Lists']
         }),
     }),
 });
 
 export const {
     useGetListsQuery,
-    useAddListQuery,
-    useDeleteListQuery,
-    useUpdateListQuery
+    useAddListMutation,
+    useDeleteListMutation,
+    useUpdateListMutation
 } = listsApiSlice;
 
 export const selectListResult = listsApiSlice.endpoints.getLists.select()

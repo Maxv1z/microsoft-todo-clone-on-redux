@@ -28,7 +28,7 @@ export const selectTodoIdsByFilter = createSelector(
         console.log("Active Filter:", activeList);
 
         const filteredIds = idAndListIds
-            .filter((todo) => todo.listId === Number(activeList))
+            .filter((todo) => todo.listId == activeList)
             .map((todo) => todo.id)
 
         console.log("Filtered Ids and ListIds:", filteredIds);
