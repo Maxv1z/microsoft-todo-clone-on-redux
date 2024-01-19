@@ -37,7 +37,7 @@ function Lists() {
                     ))}
                 </ul>
                 <button className="create-new-list" onClick={handleCreateNewList}>
-                    + Create new list
+                    <p className="icon">+</p> <p className="text">Create new list</p>
                 </button>
             </div>
         );

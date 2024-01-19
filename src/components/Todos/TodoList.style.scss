@@ -1,1 +1,59 @@
-// #1c1c1c
+.todos-main-container {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: white;
+
+    background-color: #1c1c1c;
+
+    .todos-list-container {
+        margin-top: 150px;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 3px;
+            margin: 0;
+            overflow-y: auto;
+
+            li {
+            }
+        }
+    }
+
+    .create-new-task {
+        width: 90%; /* Set the width to 90% to match todos-list-container */
+        border: none;
+        margin: 0 auto; /* Center the create-new-task horizontally */
+        position: relative; /* Change to relative */
+        bottom: 0;
+        overflow: hidden;
+
+        .create-new-task-input {
+            width: 100%; /* Set the input width to 100% */
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            margin: 10px 0 60px 0;
+        }
+
+        &.fixed {
+            position: fixed; /* Set fixed position when needed */
+            z-index: 2; /* Set a higher z-index to overlay other content */
+        }
+    }
+}

@@ -17,37 +17,37 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
             },
             providesTags: ['Todos']
         }),
-        addTodo: builder.query({
+        addTodo: builder.mutation({
             query: (todo) => ({
                 url: '/todos',
                 method: 'POST',
                 body: todo
             }),
-            providesTags: ['Todos']
+            invalidatesTags: ['Todos']
         }),
-        updateTodo: builder.query({
+        updateTodo: builder.mutation({
             query: (todo) => ({
                 url: '/todos',
                 method: 'UPDATE',
                 body: todo
             }),
-            providesTags: ['Todos']
+            invalidatesTags: ['Todos']
         }),
-        deleteTodo: builder.query({
+        deleteTodo: builder.mutation({
             query: (todo) => ({
                 url: '/todos',
                 method: 'DELETE',
             }),
-            providesTags: ['Todos']
+            invalidatesTags: ['Todos']
         }),
     }),
 });
 
 export const {
     useGetTodosQuery,
-    useUpdateTodoQuery,
-    useDeleteTodoQuery,
-    useAddTodoQuery
+    useAddTodoMutation,
+    useDeleteTodoMutation,
+    useUpdateTodoMutation
 } = extendedApiSlice;
 
 export const selectTodoResult = extendedApiSlice.endpoints.getTodos.select()
