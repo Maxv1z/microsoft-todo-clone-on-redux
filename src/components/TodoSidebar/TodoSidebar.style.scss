@@ -1,0 +1,177 @@
+// button color: #323232
+// background-color: #272727
+// hover color: #434343
+
+.todo-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    background-color: #272727;
+    position: relative;
+
+    .todo-info {
+        margin: 40px 0 0 0;
+
+        .block {
+            background-color: #323232;
+            color: white;
+            border-radius: 3px;
+
+            button {
+                text-align: left;
+                width: 100%;
+                background-color: #323232;
+                color: white;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+                width: 100%;
+                height: 40px;
+                &:hover {
+                    background-color: #434343;
+                }
+            }
+        }
+
+        .todo-title-container {
+            display: flex;
+            flex-direction: row;
+            height: 50px;
+            padding: 10px;
+
+            .checkbox {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 2px solid #999;
+                position: relative;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .checkbox:checked {
+                background-color: #ac4caf;
+                border-color: #ac4caf;
+            }
+
+            .checkbox:hover:not(:checked) {
+                border-color: #666;
+            }
+
+            /* Styling the tick */
+            .checkbox::before {
+                content: "\2713";
+                font-size: 14px;
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+
+            .checkbox:hover::before {
+                opacity: 0.5; /* Adjust the opacity on hover */
+            }
+
+            .checkbox:checked::before {
+                opacity: 1; /* Display the checkmark when checked */
+            }
+
+            .title {
+                margin: 0 0 0 5px;
+                font-size: 1.4rem;
+            }
+        }
+
+        .add-for-today {
+            margin: 10px 0;
+        }
+
+        .time-block-container {
+            padding: 0;
+            margin: 10px 0;
+
+            button {
+                width: 100%;
+                height: 40px;
+                padding: 5px;
+                border-radius: 0;
+                vertical-align: middle; /* Vertically center the text */
+                border-top: 1px solid rgb(95, 95, 95);
+                &:first-child {
+                    border-top: none; /* Remove border from the first child button */
+                }
+
+                &:hover {
+                    background-color: #434343;
+                }
+            }
+        }
+
+        .assign-container {
+            margin: 10px 0;
+        }
+
+        .add-file-container {
+            margin: 10px 0;
+        }
+
+        .notes-container {
+            margin: 10px 0;
+
+            textarea {
+                resize: none;
+                min-height: 40px;
+                background-color: #323232;
+                outline: none;
+                border: none;
+                color: white;
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+                overflow-y: hidden;
+            }
+        }
+    }
+
+    .date-and-delete-button {
+        background-color: #272727;
+        color: white;
+        border-top: 1px solid rgb(52, 52, 52);
+
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        .date {
+            text-align: center;
+        }
+
+        .delete-button {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            align-self: center;
+            cursor: pointer;
+
+            background-color: #272727;
+            color: white;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            &:hover {
+                background-color: #434343;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {
     selectTodoById,
     useUpdateTodoMutation,
@@ -8,9 +8,13 @@ import {
 import "./Todo.style.scss";
 import {Dropdown, Menu} from "antd";
 
+import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
+
 function Todo({todoId}) {
     const [deleteTodo] = useDeleteTodoMutation();
     const [updateTodo] = useUpdateTodoMutation();
+
+    const dispatch = useDispatch();
 
     const menu = (
         <Menu>
@@ -19,6 +23,7 @@ function Todo({todoId}) {
                 danger
                 onClick={() => {
                     deleteTodo({id: todoId});
+                    dispatch(changeActiveTodo(null));
                 }}
             >
                 Delete Todo
@@ -44,6 +49,9 @@ function Todo({todoId}) {
             style={{backgroundColor: "#202020"}}
             placement="bottomLeft"
             className="list-container"
+            onClick={() => {
+                dispatch(changeActiveTodo(todoId));
+            }}
         >
             <article className={`todo ${todo.completed ? "checked" : ""}`}>
                 <input
