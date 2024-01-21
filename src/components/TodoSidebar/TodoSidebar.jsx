@@ -28,6 +28,13 @@ function TodoSidebar({activeTodo}) {
     }
     return (
         <div className="todo-sidebar-container">
+            <div
+                className="close-button"
+                onClick={() => dispatch(changeActiveTodo(null))}
+            >
+                x
+            </div>
+
             <div className="todo-info">
                 <div className="block todo-title-container">
                     <input
