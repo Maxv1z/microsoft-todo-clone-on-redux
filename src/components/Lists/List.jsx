@@ -7,6 +7,7 @@ import {
 } from "../../features/lists/listsSlice";
 
 import {changeListChoice} from "../../features/chosenList/chosenListSlice";
+import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 import "./List.style.scss";
 import {Dropdown, Menu, Input} from "antd";
 
@@ -26,7 +27,7 @@ function List({listId}) {
 
     const handleFilterChange = (listId) => {
         dispatch(changeListChoice(listId));
-        console.log("button clicked");
+        dispatch(changeActiveTodo(null));
     };
 
     const handleRenameClick = () => {
