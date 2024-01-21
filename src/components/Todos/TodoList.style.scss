@@ -29,6 +29,45 @@
 
             li {
             }
+
+            .completed-todos-button-container {
+                background-color: none;
+                display: flex;
+                align-items: center;
+                margin: 3px 0;
+                height: 50px;
+
+                .completed-todos-button {
+                    background-color: #2a2a2a;
+                    padding: 10px;
+                    display: flex;
+                    color: white;
+                    height: 40px;
+
+                    border-radius: 5px;
+                    margin: 10px 0;
+                    align-items: center;
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+
+                    &:hover {
+                        background-color: #323232;
+                    }
+
+                    &.open {
+                        .tick-icon {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+
+                .tick-icon {
+                    font-size: 16px;
+                    margin-right: 5px;
+                    transition: transform 0.3s ease;
+                }
+            }
         }
     }
 

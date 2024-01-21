@@ -63,11 +63,23 @@ function TodoList() {
                         ))}
                     <li>
                         {(uncompletedTodos.length > 0 || completedTodos.length > 0) && (
-                            <button
-                                onClick={() => setShowCompletedTodos(!showCompletedTodos)}
+                            <div
+                                className={`completed-todos-button-container ${
+                                    showCompletedTodos ? "open" : ""
+                                }`}
                             >
-                                {showCompletedTodos ? "Hide" : "Show"} Completed Todos
-                            </button>
+                                <button
+                                    className={`completed-todos-button ${
+                                        showCompletedTodos ? "open" : ""
+                                    }`}
+                                    onClick={() =>
+                                        setShowCompletedTodos(!showCompletedTodos)
+                                    }
+                                >
+                                    <span className="tick-icon">{">"}</span> Completed
+                                    Todos {completedTodos.length}
+                                </button>
+                            </div>
                         )}
                     </li>
                     {showCompletedTodos &&
