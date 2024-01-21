@@ -14,6 +14,8 @@ function Todo({todoId}) {
     const [deleteTodo] = useDeleteTodoMutation();
     const [updateTodo] = useUpdateTodoMutation();
 
+    console.log("TODOID FROM TODO COMPONENT", todoId);
+
     const dispatch = useDispatch();
 
     const menu = (

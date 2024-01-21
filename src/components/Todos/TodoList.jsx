@@ -2,34 +2,38 @@ import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import Todo from "./Todo";
 import {nanoid} from "nanoid";
-import {useAddTodoMutation, useGetTodosQuery} from "../../features/todos/todosSlice";
-import {selectActiveList} from "../../features/chosenList/chosenListSlice";
+import {
+    useAddTodoMutation,
+    useGetTodosQuery,
+    selectCompletedTodos,
+    selectTodoById,
+    selectUncompletedTodos,
+} from "../../features/todos/todosSlice";
+import {
+    selectActiveList,
+    selectTodoIdsByFilter,
+} from "../../features/chosenList/chosenListSlice";
 
 import "./TodoList.style.scss";
-
-import {selectTodoIdsByFilter} from "../../features/chosenList/chosenListSlice";
 
 function TodoList() {
     const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
     const [addTodo] = useAddTodoMutation();
-
     const activeList = useSelector(selectActiveList);
-
     const [title, setTitle] = useState("");
+    const [showCompletedTodos, setShowCompletedTodos] = useState(false);
 
-    // gets todosIds, by filtering list
-    const todosIdsFromFilter = useSelector(selectTodoIdsByFilter);
+    // const todosIdsFromFilter = useSelector(selectTodoIdsByFilter);
 
-    let content;
+    // fetching completed todos to show
+    const completedTodos = useSelector(selectCompletedTodos);
+    // fetching uncompleted todos to show on button click
+    const uncompletedTodos = useSelector(selectUncompletedTodos);
+
     if (isLoading) {
-        content = <p>Loading...</p>;
+        return <p>Loading...</p>;
     } else if (isError) {
-        content = <p>{error.message}</p>;
-    } else {
-        content = <p>No data available.</p>;
-    }
-    if (isError || isLoading) {
-        return <>{content}</>;
+        return <p>{error.message}</p>;
     }
 
     const handleAddTask = (e) => {
@@ -42,6 +46,7 @@ function TodoList() {
             file: null,
             starred: false,
             listId: activeList,
+            completed: false,
         });
         setTitle("");
     };
@@ -50,11 +55,27 @@ function TodoList() {
         <div className="todos-main-container">
             <div className="todos-list-container">
                 <ul>
-                    {todosIdsFromFilter.map((todoId) => (
-                        <li key={todoId} className="todo">
-                            <Todo key={todoId} todoId={todoId} />
-                        </li>
-                    ))}
+                    {uncompletedTodos &&
+                        uncompletedTodos.map((todo) => (
+                            <li key={todo} className="todo">
+                                <Todo key={todo} todoId={todo} />
+                            </li>
+                        ))}
+                    <li>
+                        {(uncompletedTodos.length > 0 || completedTodos.length > 0) && (
+                            <button
+                                onClick={() => setShowCompletedTodos(!showCompletedTodos)}
+                            >
+                                {showCompletedTodos ? "Hide" : "Show"} Completed Todos
+                            </button>
+                        )}
+                    </li>
+                    {showCompletedTodos &&
+                        completedTodos.map((completedTodo) => (
+                            <li key={completedTodo} className="todo">
+                                {completedTodo && <Todo todoId={completedTodo} />}
+                            </li>
+                        ))}
                 </ul>
             </div>
             <form action="" onSubmit={handleAddTask} className="create-new-task">

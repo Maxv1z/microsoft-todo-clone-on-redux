@@ -68,3 +68,23 @@ export const selectIdAndListIdsFromTodos = createSelector(
     selectAllTodos,
     (allTodos) => allTodos.map((todo) => ({ id: todo.id, listId: todo.listId }))
 );
+
+const activeList = (state) => state.chosenList.filter;
+
+export const selectCompletedTodos = createSelector(
+    [selectAllTodos, activeList],
+    (allTodos, activeList) => {
+        return allTodos
+            .filter((todo) => todo.completed == true && todo.listId == activeList)
+            .map((todo) => todo.id);
+    }
+);
+
+export const selectUncompletedTodos = createSelector(
+    [selectAllTodos, activeList],
+    (allTodos, activeList) => {
+        return allTodos
+            .filter((todo) => todo.completed == false && todo.listId == activeList)
+            .map((todo) => todo.id);
+    }
+);

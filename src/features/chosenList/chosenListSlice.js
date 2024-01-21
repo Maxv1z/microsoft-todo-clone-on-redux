@@ -24,14 +24,9 @@ export const selectActiveList = (state) => state.chosenList.filter;
 export const selectTodoIdsByFilter = createSelector(
     [selectIdAndListIdsFromTodos, selectActiveList],
     (idAndListIds, activeList) => {
-        console.log("All Ids and ListIds:", idAndListIds);
-        console.log("Active Filter:", activeList);
-
         const filteredIds = idAndListIds
             .filter((todo) => todo.listId == activeList)
             .map((todo) => todo.id)
-
-        console.log("Filtered Ids and ListIds:", filteredIds);
         return filteredIds;
     }
 );
