@@ -22,6 +22,7 @@ function TodoList() {
     const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
+    const [sortCriteria, setSortCriteria] = useState("createdAt");
 
     // const todosIdsFromFilter = useSelector(selectTodoIdsByFilter);
 
@@ -51,16 +52,34 @@ function TodoList() {
         setTitle("");
     };
 
+    const sortTodos = (uncompletedTodos) => {
+        return [...uncompletedTodos].sort((a, b) => {
+            if (sortCriteria === "createdAt") {
+                return b.createdAt - a.createdAt;
+            } else if (sortCriteria === "title") {
+                return a.title.localeCompare(b.title);
+            }
+            return 0;
+        });
+    };
+
     return (
         <div className="todos-main-container">
             <div className="todos-list-container">
+                <div className="sort-criteria">
+                    <button onClick={() => setSortCriteria("createdAt")}>
+                        Sort by Date
+                    </button>
+                    <button onClick={() => setSortCriteria("title")}>
+                        Sort by Title
+                    </button>
+                </div>
                 <ul>
-                    {uncompletedTodos &&
-                        uncompletedTodos.map((todo) => (
-                            <li key={todo} className="todo">
-                                <Todo key={todo} todoId={todo} />
-                            </li>
-                        ))}
+                    {sortTodos(uncompletedTodos).map((todo) => (
+                        <li key={todo.id} className="todo">
+                            <Todo key={todo.id} todoId={todo.id} />
+                        </li>
+                    ))}
                     <li>
                         {(uncompletedTodos.length > 0 || completedTodos.length > 0) && (
                             <div

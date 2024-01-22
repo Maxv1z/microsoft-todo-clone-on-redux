@@ -84,7 +84,12 @@ export const selectUncompletedTodos = createSelector(
     [selectAllTodos, activeList],
     (allTodos, activeList) => {
         return allTodos
-            .filter((todo) => todo.completed == false && todo.listId == activeList)
-            .map((todo) => todo.id);
+            .filter((todo) => !todo.completed && todo.listId === activeList)
+            .map((todo) => ({
+                id: todo.id,
+                title: todo.title,
+                createdAt: todo.createdAt,
+                starred: todo.starred,
+            }));
     }
 );
