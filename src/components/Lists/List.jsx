@@ -6,6 +6,7 @@ import {
     useUpdateListMutation,
 } from "../../features/lists/listsSlice";
 
+
 import {changeListChoice} from "../../features/chosenList/chosenListSlice";
 import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 import "./List.style.scss";

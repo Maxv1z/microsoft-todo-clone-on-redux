@@ -10,6 +10,8 @@ import {
     useAddListMutation,
 } from "../../features/lists/listsSlice";
 
+import {selectActiveList} from "../../features/chosenList/chosenListSlice";
+
 function Lists() {
     let content;
     const {isLoading, isSuccess, isError, error} = useGetListsQuery();
@@ -24,6 +26,8 @@ function Lists() {
         });
     };
 
+    const activeListId = useSelector(selectActiveList);
+
     if (isLoading) {
         content = <p>Loading...</p>;
     } else if (isSuccess) {
@@ -31,7 +35,10 @@ function Lists() {
             <div className="lists-container">
                 <ul className="list-scrollbar">
                     {lists.map((listId) => (
-                        <li key={listId}>
+                        <li
+                            key={listId}
+                            className={`${activeListId === listId ? "active" : ""}`}
+                        >
                             <List key={listId} listId={listId} />
                         </li>
                     ))}
