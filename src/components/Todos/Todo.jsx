@@ -11,6 +11,8 @@ import {selectAllLists} from "../../features/lists/listsSlice";
 
 import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 
+import {StarFilled, StarOutlined} from "@ant-design/icons";
+
 function Todo({todoId}) {
     const [deleteTodo] = useDeleteTodoMutation();
     const [updateTodo] = useUpdateTodoMutation();
@@ -50,6 +52,10 @@ function Todo({todoId}) {
         updateTodo({id: todoId, completed: !todo.completed});
     };
 
+    const handleStarTodo = async () => {
+        updateTodo({id: todoId, starred: !todo.starred});
+    };
+
     return (
         <Dropdown
             overlay={menu}
@@ -67,15 +73,24 @@ function Todo({todoId}) {
             }}
         >
             <article className={`todo ${todo.completed ? "checked" : ""}`}>
-                <input
-                    type="checkbox"
-                    className="checkbox"
-                    checked={todo.completed}
-                    onClick={handleToggleTodo}
-                />
-                <p className={`todo-title ${todo.completed ? "checked" : ""}`}>
-                    {todo.title}
-                </p>
+                <div className="checkbox-container">
+                    <input
+                        type="checkbox"
+                        className="checkbox"
+                        checked={todo.completed}
+                        onClick={handleToggleTodo}
+                    />
+                    <p className={`todo-title ${todo.completed ? "checked" : ""}`}>
+                        {todo.title}
+                    </p>
+                </div>
+                <div className="star-container" onClick={() => handleStarTodo()}>
+                    {todo.starred ? (
+                        <StarFilled className="star-icon" />
+                    ) : (
+                        <StarOutlined className="star-icon" />
+                    )}
+                </div>
             </article>
         </Dropdown>
     );

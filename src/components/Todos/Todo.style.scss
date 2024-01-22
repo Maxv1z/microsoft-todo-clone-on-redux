@@ -2,15 +2,14 @@
     background-color: #2a2a2a;
     padding: 5px;
     display: flex;
+    justify-content: space-between; /* Add this line */
     align-items: center;
-
     margin: 3px 0;
     border-radius: 5px;
-    align-items: center;
     cursor: pointer;
-    border-bottom: none;
     height: 50px;
     flex: 1 1 auto;
+    border-bottom: none;
 
     &:hover {
         background-color: #323232;
@@ -22,6 +21,11 @@
         &.checked {
             text-decoration: line-through;
         }
+    }
+
+    .checkbox-container {
+        display: flex;
+        align-items: center;
     }
 
     .checkbox {
@@ -59,10 +63,14 @@
     }
 
     .checkbox:hover::before {
-        opacity: 0.5; /* Adjust the opacity on hover */
+        opacity: 0.5;
     }
 
     .checkbox:checked::before {
-        opacity: 1; /* Display the checkmark when checked */
+        opacity: 1;
+    }
+
+    .star-icon {
+        margin-right: 10px; /* Add margin to separate it from the title */
     }
 }
