@@ -6,13 +6,11 @@ import {
     useAddTodoMutation,
     useGetTodosQuery,
     selectCompletedTodos,
-    selectTodoById,
     selectUncompletedTodos,
 } from "../../features/todos/todosSlice";
-import {
-    selectActiveList,
-    selectTodoIdsByFilter,
-} from "../../features/chosenList/chosenListSlice";
+import {selectActiveList} from "../../features/chosenList/chosenListSlice";
+import TodosTopBar from "./TodosTopBar/TodosTopBar";
+import {selectSortingCriteria} from "../../features/sortingCriteria/sortingCriteriaSlice";
 
 import "./TodoList.style.scss";
 
@@ -22,7 +20,8 @@ function TodoList() {
     const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
-    const [sortCriteria, setSortCriteria] = useState("createdAt");
+    const sortCriteria = useSelector(selectSortingCriteria);
+    console.log("sortCriteria", sortCriteria);
 
     // const todosIdsFromFilter = useSelector(selectTodoIdsByFilter);
 
@@ -58,22 +57,18 @@ function TodoList() {
                 return b.createdAt - a.createdAt;
             } else if (sortCriteria === "title") {
                 return a.title.localeCompare(b.title);
+            } else if (sortCriteria === "starred") {
+                return b.starred - a.starred;
+            } else {
+                return uncompletedTodos;
             }
-            return 0;
         });
     };
 
     return (
         <div className="todos-main-container">
+            <TodosTopBar />
             <div className="todos-list-container">
-                <div className="sort-criteria">
-                    <button onClick={() => setSortCriteria("createdAt")}>
-                        Sort by Date
-                    </button>
-                    <button onClick={() => setSortCriteria("title")}>
-                        Sort by Title
-                    </button>
-                </div>
                 <ul>
                     {sortTodos(uncompletedTodos).map((todo) => (
                         <li key={todo.id} className="todo">

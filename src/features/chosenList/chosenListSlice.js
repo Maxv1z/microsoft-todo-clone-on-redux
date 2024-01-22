@@ -1,6 +1,9 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 
-const initialState = { filter: '1' };
+import { selectAllLists } from '../lists/listsSlice';
+
+const initialState = { filter: '3' };
 
 const chosenListSlice = createSlice({
     name: 'chosenList',
@@ -11,7 +14,6 @@ const chosenListSlice = createSlice({
         },
     },
 });
-
 
 export const { changeListChoice } = chosenListSlice.actions;
 export default chosenListSlice.reducer;
