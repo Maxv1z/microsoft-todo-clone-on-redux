@@ -1,293 +1,295 @@
 {
-    "lists": [
-        {
-            "id": "2",
-            "name": "Personal Tasks"
-        },
-        {
-            "id": "3",
-            "name": "Work Tasks new"
-        },
-        {
-            "id": "3sWWAo_ZeNPHuUiy9J4U6",
-            "name": "Home list"
-        }
-    ],
-    "todos": [
-        {
-            "id": "1",
-            "createdAt": "2024-01-17T12:00:00",
-            "timeToFinish": "1 hour",
-            "title": "Complete Front-End Project",
-            "notes": "Finish the coding and debugging for the project.",
-            "file": "project_code.zip",
-            "starred": true,
-            "listId": 1,
-            "completed": true
-        },
-        {
-            "id": "4",
-            "createdAt": "2024-01-21T14:00:00",
-            "timeToFinish": "45 minutes",
-            "title": "French Language Study",
-            "notes": "Update our notes is easy now",
-            "file": "french_notes.txt",
-            "starred": false,
-            "listId": 2
-        },
-        {
-            "id": "f21X6QhaMezcNiLitlGeF",
-            "createdAt": 1705574730157,
-            "title": "Add new values ",
-            "notes": "Adding new notes\n",
-            "file": null,
-            "starred": false,
-            "listId": null,
-            "completed": true
-        },
-        {
-            "id": "Oo0OcZKqGVwAMbqPapW8n",
-            "createdAt": 1705579059827,
-            "title": "Adding something new to personal tasks",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3",
-            "completed": true
-        },
-        {
-            "id": "k-HFcUeaaHjx6qPt5Q3Bm",
-            "createdAt": 1705579427842,
-            "title": "Add task to new list",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": null
-        },
-        {
-            "id": "U-sCsV-YGCGCOtJpkleTM",
-            "createdAt": 1705740271336,
-            "title": "Make code",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3",
-            "completed": true
-        },
-        {
-            "id": "XUKYPF_CfiqlknAU19a8b",
-            "createdAt": 1705843487196,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": true
-        },
-        {
-            "id": "eQIpSpAAmfOzFl6OJD4lf",
-            "createdAt": 1705843488064,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": true
-        },
-        {
-            "id": "kYv2WysjarvP7DFzwbvLD",
-            "createdAt": 1705843488770,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": true
-        },
-        {
-            "id": "4233vl5K4W6DkL23m5wx7",
-            "createdAt": 1705852058375,
-            "title": "asdfasdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "2"
-        },
-        {
-            "id": "Y8pzZZOnfNBgXop6mF2RF",
-            "createdAt": 1705852067119,
-            "title": "Asdfasdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "2"
-        },
-        {
-            "id": "Kb-hOgpcDuJBOpvxMdvUX",
-            "createdAt": 1705852082315,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": true
-        },
-        {
-            "id": "ipVzXkv9kuKHGhXgoBeZP",
-            "createdAt": 1705852089439,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": true
-        },
-        {
-            "id": "QMRiIeMY7sm6p4ZUbo1Tr",
-            "createdAt": 1705852091679,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": true
-        },
-        {
-            "id": "gUA7LNIinduSVuL4KTFt4",
-            "createdAt": 1705852161252,
-            "title": "asdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": null
-        },
-        {
-            "id": "oqk6GCAeBu0quWXfNCCao",
-            "createdAt": 1705852284897,
-            "title": "New task",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": null
-        },
-        {
-            "id": "v7XDftSDxJVT7HwDNsCVV",
-            "createdAt": 1705852325529,
-            "title": "asdfasfasfasfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": null
-        },
-        {
-            "id": "hYc30NwkGbD6wJAUBO738",
-            "createdAt": 1705852381266,
-            "title": "New task",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": null,
-            "completed": true
-        },
-        {
-            "id": "Dm_ikB_aC_G7IixFsgWSE",
-            "createdAt": 1705854323040,
-            "title": "Writing new things",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-            "completed": false
-        },
-        {
-            "id": "NC-ToTygzeCnWl38mwsH0",
-            "createdAt": 1705914626252,
-            "title": "asdfasdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": true,
-            "listId": null,
-            "completed": false
-        },
-        {
-            "id": "WiJoSj9SXpuG_-gJ0lRCt",
-            "createdAt": 1705914633162,
-            "title": "zzzz",
-            "notes": "",
-            "file": null,
-            "starred": true,
-            "listId": null,
-            "completed": false
-        },
-        {
-            "id": "ZimpASHgF9xch2KTj1Pbx",
-            "createdAt": 1705914677154,
-            "title": "bbbbb",
-            "notes": "",
-            "file": null,
-            "starred": true,
-            "listId": null,
-            "completed": false
-        },
-        {
-            "id": "O-H83gHGUB_IL9cEdeVu8",
-            "createdAt": 1705914710538,
-            "title": "dfasdfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3",
-            "completed": false
-        },
-        {
-            "id": "-jZ7pS7UrhyyGK0DcrPO8",
-            "createdAt": 1705914712470,
-            "title": "adsfasdfasdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3",
-            "completed": true
-        },
-        {
-            "id": "h3zT2V0WNwSSo3wF8IQMU",
-            "createdAt": 1705914712713,
-            "title": "asdf",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "3",
-            "completed": true
-        },
-        {
-            "id": "mjjQwznUVRcD8OK76ZcwF",
-            "createdAt": 1705914713181,
-            "title": "asd",
-            "notes": "",
-            "file": null,
-            "starred": true,
-            "listId": "3",
-            "completed": false
-        },
-        {
-            "id": "edRm1CPGfJwFXRCulevLg",
-            "createdAt": 1705914713345,
-            "title": "fa",
-            "notes": "",
-            "file": null,
-            "starred": false,
-            "listId": "2",
-            "completed": false
-        },
-        {
-            "id": "016Yr_2aG0J1h5oqdMtSn",
-            "createdAt": 1705914731846,
-            "title": "zzzxcvzxvc",
-            "notes": "",
-            "file": null,
-            "starred": true,
-            "listId": "3",
-            "completed": false
-        }
-    ]
+  "lists": [
+    {
+      "id": "2",
+      "name": "Personal Tasks"
+    },
+    {
+      "id": "3",
+      "name": "Work Tasks new"
+    },
+    {
+      "id": "3sWWAo_ZeNPHuUiy9J4U6",
+      "name": "Home list"
+    }
+  ],
+  "todos": [
+    {
+      "id": "1",
+      "createdAt": "2024-01-17T12:00:00",
+      "timeToFinish": "1 hour",
+      "title": "Complete Front-End Project",
+      "notes": "Finish the coding and debugging for the project.",
+      "file": "project_code.zip",
+      "starred": true,
+      "listId": 1,
+      "completed": true
+    },
+    {
+      "id": "4",
+      "createdAt": "2024-01-21T14:00:00",
+      "timeToFinish": "45 minutes",
+      "title": "French Language Study",
+      "notes": "Update our notes is easy now",
+      "file": "french_notes.txt",
+      "starred": false,
+      "listId": 2
+    },
+    {
+      "id": "f21X6QhaMezcNiLitlGeF",
+      "createdAt": 1705574730157,
+      "title": "Add new values ",
+      "notes": "Adding new notes\n",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": true
+    },
+    {
+      "id": "Oo0OcZKqGVwAMbqPapW8n",
+      "createdAt": 1705579059827,
+      "title": "Adding something new to personal tasks",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": true
+    },
+    {
+      "id": "k-HFcUeaaHjx6qPt5Q3Bm",
+      "createdAt": 1705579427842,
+      "title": "Add task to new list",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null
+    },
+    {
+      "id": "U-sCsV-YGCGCOtJpkleTM",
+      "createdAt": 1705740271336,
+      "title": "Make code",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": true
+    },
+    {
+      "id": "XUKYPF_CfiqlknAU19a8b",
+      "createdAt": 1705843487196,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": true
+    },
+    {
+      "id": "eQIpSpAAmfOzFl6OJD4lf",
+      "createdAt": 1705843488064,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": true
+    },
+    {
+      "id": "kYv2WysjarvP7DFzwbvLD",
+      "createdAt": 1705843488770,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": true
+    },
+    {
+      "id": "4233vl5K4W6DkL23m5wx7",
+      "createdAt": 1705852058375,
+      "title": "asdfasdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "2",
+      "completed": false
+    },
+    {
+      "id": "Y8pzZZOnfNBgXop6mF2RF",
+      "createdAt": 1705852067119,
+      "title": "Asdfasdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "2",
+      "completed": false
+    },
+    {
+      "id": "Kb-hOgpcDuJBOpvxMdvUX",
+      "createdAt": 1705852082315,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": true
+    },
+    {
+      "id": "ipVzXkv9kuKHGhXgoBeZP",
+      "createdAt": 1705852089439,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": true
+    },
+    {
+      "id": "QMRiIeMY7sm6p4ZUbo1Tr",
+      "createdAt": 1705852091679,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": true
+    },
+    {
+      "id": "gUA7LNIinduSVuL4KTFt4",
+      "createdAt": 1705852161252,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null
+    },
+    {
+      "id": "oqk6GCAeBu0quWXfNCCao",
+      "createdAt": 1705852284897,
+      "title": "New task",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null
+    },
+    {
+      "id": "v7XDftSDxJVT7HwDNsCVV",
+      "createdAt": 1705852325529,
+      "title": "asdfasfasfasfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null
+    },
+    {
+      "id": "hYc30NwkGbD6wJAUBO738",
+      "createdAt": 1705852381266,
+      "title": "New task",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": true
+    },
+    {
+      "id": "Dm_ikB_aC_G7IixFsgWSE",
+      "createdAt": 1705854323040,
+      "title": "Writing new things",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "completed": false
+    },
+    {
+      "id": "NC-ToTygzeCnWl38mwsH0",
+      "createdAt": 1705914626252,
+      "title": "asdfasdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": null,
+      "completed": false
+    },
+    {
+      "id": "WiJoSj9SXpuG_-gJ0lRCt",
+      "createdAt": 1705914633162,
+      "title": "zzzz",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": null,
+      "completed": false
+    },
+    {
+      "id": "ZimpASHgF9xch2KTj1Pbx",
+      "createdAt": 1705914677154,
+      "title": "bbbbb",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": null,
+      "completed": false
+    },
+    {
+      "id": "O-H83gHGUB_IL9cEdeVu8",
+      "createdAt": 1705914710538,
+      "title": "dfasdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false
+    },
+    {
+      "id": "-jZ7pS7UrhyyGK0DcrPO8",
+      "createdAt": 1705914712470,
+      "title": "adsfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": true
+    },
+    {
+      "id": "h3zT2V0WNwSSo3wF8IQMU",
+      "createdAt": 1705914712713,
+      "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": true
+    },
+    {
+      "id": "mjjQwznUVRcD8OK76ZcwF",
+      "createdAt": 1705914713181,
+      "title": "asd",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false
+    },
+    {
+      "id": "edRm1CPGfJwFXRCulevLg",
+      "createdAt": 1705914713345,
+      "title": "fa",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "2",
+      "completed": false
+    },
+    {
+      "id": "016Yr_2aG0J1h5oqdMtSn",
+      "createdAt": 1705914731846,
+      "title": "zzzxcvzxvc",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": "3",
+      "completed": false
+    }
+  ]
 }
