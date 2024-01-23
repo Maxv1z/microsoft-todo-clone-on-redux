@@ -16,10 +16,21 @@
     }
 
     .todo-title {
+        display: flex;
+        flex-direction: column;
         margin: 0 0 0 10px;
 
         &.checked {
             text-decoration: line-through;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .todo-finishAt {
+            margin: 0;
+            color: #d1d1d1;
         }
     }
 

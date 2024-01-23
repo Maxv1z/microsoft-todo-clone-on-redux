@@ -6,7 +6,6 @@ import {
     useUpdateListMutation,
 } from "../../features/lists/listsSlice";
 
-
 import {changeListChoice} from "../../features/chosenList/chosenListSlice";
 import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 import "./List.style.scss";
@@ -28,6 +27,7 @@ function List({listId}) {
 
     const handleFilterChange = (listId) => {
         dispatch(changeListChoice(listId));
+        console.log("ACTIVE LIST CHNAGE", listId);
         dispatch(changeActiveTodo(null));
     };
 
@@ -42,14 +42,19 @@ function List({listId}) {
     };
 
     const menu = (
-        <Menu>
-            <Menu.Item key="rename" onClick={handleRenameClick}>
-                Rename list
-            </Menu.Item>
-            <Menu.Item key="delete" danger onClick={onDeleteList}>
-                Delete
-            </Menu.Item>
-        </Menu>
+        <>
+            {list.id != 1 && (
+                <Menu>
+                    <Menu.Item key="rename" onClick={handleRenameClick}>
+                        Rename list
+                    </Menu.Item>
+
+                    <Menu.Item key="delete" danger onClick={onDeleteList}>
+                        Delete
+                    </Menu.Item>
+                </Menu>
+            )}
+        </>
     );
 
     return (

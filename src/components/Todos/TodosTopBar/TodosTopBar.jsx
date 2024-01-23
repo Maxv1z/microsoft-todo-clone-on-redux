@@ -11,9 +11,13 @@ function TodosTopBar() {
     const dispatch = useDispatch();
     const activeList = useSelector(selectActiveList);
     const [deleteList] = useDeleteListMutation();
-
     const list = useSelector((state) => selectListById(state, activeList));
-    console.log("ACTIVE LIST", list);
+
+    if (isLoading) {
+        return <>Loading...</>;
+    } else if (error) {
+        return <>{error}</>;
+    }
 
     const onDeleteList = () => {
         deleteList({id: list.id});
@@ -26,7 +30,7 @@ function TodosTopBar() {
 
     const menu = (
         <Menu>
-            <Menu.Item key="rename">Rename list</Menu.Item>
+            {list.id !== 1 && <Menu.Item key="rename">Rename list</Menu.Item>}
             <Menu.SubMenu key="submenu" title="Sorting...">
                 <Menu.Item
                     onClick={() => dispatch(changeSortingCriteria("createdAt"))}
@@ -47,22 +51,19 @@ function TodosTopBar() {
                     Sort by star
                 </Menu.Item>
             </Menu.SubMenu>
-            <Menu.Item
-                key="delete"
-                danger
-                style={{borderTop: "1px solid gray"}}
-                onClick={onDeleteList}
-            >
-                Delete List
-            </Menu.Item>
+            {list.id !== 1 && (
+                <Menu.Item
+                    key="delete"
+                    danger
+                    style={{borderTop: "1px solid gray"}}
+                    onClick={onDeleteList}
+                >
+                    Delete List
+                </Menu.Item>
+            )}
         </Menu>
     );
 
-    if (isLoading) {
-        return <>Loading...</>;
-    } else if (error) {
-        return <>{error}</>;
-    }
     return (
         <div className="todos-top-bar-container">
             <div className="name-and-menu">

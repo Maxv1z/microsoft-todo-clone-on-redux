@@ -93,3 +93,32 @@ export const selectUncompletedTodos = createSelector(
             }));
     }
 );
+
+
+const isSameDate = (date1, date2) => {
+    return (
+        date1.getFullYear() === date2.getFullYear() &&
+        date1.getMonth() === date2.getMonth() &&
+        date1.getDate() === date2.getDate()
+    );
+};
+
+export const selectCompletedTodosForToday = createSelector(
+    [selectAllTodos],
+    (allTodos) => {
+        const currentTime = new Date();
+        return allTodos
+            .filter((todo) => todo.completed && isSameDate(new Date(todo.finishAt), currentTime))
+            .map((todo) => todo.id);
+    }
+);
+
+export const selectUncompletedTodosForToday = createSelector(
+    [selectAllTodos],
+    (allTodos) => {
+        const currentTime = new Date();
+        return allTodos
+            .filter((todo) => !todo.completed && isSameDate(new Date(todo.finishAt), currentTime))
+            .map((todo) => todo.id);
+    }
+);

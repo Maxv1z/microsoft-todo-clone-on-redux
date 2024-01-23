@@ -1,6 +1,6 @@
 import React from "react";
 import Lists from "../Lists/Lists";
-import TodoList from "../Todos/TodoList";
+import TodoList from "../Todos/TodoList/TodoList";
 import "./Home.style.scss";
 import TodoSidebar from "../TodoSidebar/TodoSidebar";
 import {selectActiveTodo} from "../../features/activeTodo/activeTodoSlice";

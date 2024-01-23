@@ -1,18 +1,19 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
-import Todo from "./Todo";
+import Todo from "../Todo/Todo";
 import {nanoid} from "nanoid";
 import {
     useAddTodoMutation,
     useGetTodosQuery,
     selectCompletedTodos,
     selectUncompletedTodos,
-} from "../../features/todos/todosSlice";
-import {selectActiveList} from "../../features/chosenList/chosenListSlice";
-import TodosTopBar from "./TodosTopBar/TodosTopBar";
-import {selectSortingCriteria} from "../../features/sortingCriteria/sortingCriteriaSlice";
+} from "../../../features/todos/todosSlice";
+import {selectActiveList} from "../../../features/chosenList/chosenListSlice";
+import TodosTopBar from "../TodosTopBar/TodosTopBar";
+import {selectSortingCriteria} from "../../../features/sortingCriteria/sortingCriteriaSlice";
 
 import "./TodoList.style.scss";
+import TodayTodos from "../TodayTodos/TodayTodos";
 
 function TodoList() {
     const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
@@ -34,6 +35,8 @@ function TodoList() {
         return <p>Loading...</p>;
     } else if (isError) {
         return <p>{error.message}</p>;
+    } else if (activeList == 1) {
+        return <TodayTodos />;
     }
 
     const handleAddTask = (e) => {
@@ -47,6 +50,7 @@ function TodoList() {
             starred: false,
             listId: activeList,
             completed: false,
+            timeToFinish: null,
         });
         setTitle("");
     };
