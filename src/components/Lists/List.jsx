@@ -26,8 +26,8 @@ function List({listId}) {
 
     const dispatch = useDispatch();
 
+    const todos = useSelector(selectTodosByListId);
     const onDeleteList = async () => {
-        const todos = useSelector(selectTodosByListId);
         const idsToDelete = todos.map((todo) => todo.id);
         // Use map to create an array of Promises for each deleteTodo call
         const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));

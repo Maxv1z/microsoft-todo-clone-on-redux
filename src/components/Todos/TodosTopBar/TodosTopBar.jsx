@@ -1,17 +1,25 @@
 import "./TodosTopBar.style.scss";
 import {useSelector, useDispatch} from "react-redux";
 import {Dropdown, Menu} from "antd";
-import {selectActiveList} from "../../../features/chosenList/chosenListSlice";
+import {
+    selectActiveList,
+    changeListChoice,
+} from "../../../features/chosenList/chosenListSlice";
 import {changeSortingCriteria} from "../../../features/sortingCriteria/sortingCriteriaSlice";
 import {selectListById, useGetListsQuery} from "../../../features/lists/listsSlice";
 import {useDeleteListMutation} from "../../../features/lists/listsSlice";
+import {
+    selectTodosByListId,
+    useDeleteTodoMutation,
+} from "../../../features/todos/todosSlice";
 
 function TodosTopBar() {
     const {isLoading, error} = useGetListsQuery();
-    const dispatch = useDispatch();
-    const activeList = useSelector(selectActiveList);
     const [deleteList] = useDeleteListMutation();
-    const list = useSelector((state) => selectListById(state, activeList));
+    const [deleteTodo] = useDeleteTodoMutation();
+
+    const activeList = useSelector(selectActiveList);
+    const dispatch = useDispatch();
 
     if (isLoading) {
         return <>Loading...</>;
@@ -19,14 +27,25 @@ function TodosTopBar() {
         return <>{error}</>;
     }
 
-    const onDeleteList = () => {
-        deleteList({id: list.id});
-        dispatch(changeListChoice(null));
+    const todos = useSelector(selectTodosByListId);
+    const onDeleteList = async () => {
+        console.log("TOODS FROM TOODS TOP BAR", todos);
+        const idsToDelete = todos.map((todo) => todo.id);
+        // Use map to create an array of Promises for each deleteTodo call
+        const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
+        // Wait for all todo deletions to complete
+        await Promise.all(deletePromises);
+        // Continue with the rest of the code
+        await deleteList({id: list.id});
+        dispatch(changeListChoice(1));
+        dispatch(changeActiveTodo(null));
     };
 
     const menuItemStyle = {
         width: "300px",
     };
+
+    const list = useSelector((state) => selectListById(state, activeList));
 
     const menu = (
         <Menu>

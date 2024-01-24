@@ -15,6 +15,10 @@
     {
       "id": "4",
       "name": "Work Tasks"
+    },
+    {
+      "id": "Fn8_FcxbLzXqh-XcL6h07",
+      "name": "New list"
     }
   ],
   "todos": [
@@ -196,7 +200,8 @@
       "starred": true,
       "listId": null,
       "completed": false,
-      "finishAt": "2024-01-24T10:00:43.324Z"
+      "finishAt": "2024-01-24T10:00:43.324Z",
+      "timeToFinish": "2024-01-25T18:31:39.740Z"
     },
     {
       "id": "ZimpASHgF9xch2KTj1Pbx",
@@ -293,41 +298,6 @@
       "completed": false,
       "timeToFinish": null,
       "finishAt": "2024-01-24T11:59:26.223Z"
-    },
-    {
-      "id": "ypJ5DGbGvOZFN7DJbgIet",
-      "createdAt": 1706090526041,
-      "title": "New task to work tasks",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "4",
-      "completed": false,
-      "timeToFinish": null,
-      "finishAt": "2024-01-24T11:56:33.504Z"
-    },
-    {
-      "id": "bmSybLElb8R2qte4kBTxs",
-      "createdAt": 1706090529262,
-      "title": "completed tasksk",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "4",
-      "completed": false,
-      "timeToFinish": "2024-01-24T12:00:12.816Z",
-      "finishAt": "2024-01-24T11:56:31.961Z"
-    },
-    {
-      "id": "yZlxNS6Eh90fT0T4E4yVB",
-      "createdAt": 1706090609797,
-      "title": "asdfasdasdf",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "4",
-      "completed": true,
-      "timeToFinish": null
     },
     {
       "id": "C5YEkDLGHX_g1hXbleAf4",
@@ -495,18 +465,6 @@
       "timeToFinish": null
     },
     {
-      "id": "skU_7s_fWo2rpVl6Pcm8Z",
-      "createdAt": 1706096403757,
-      "title": "asdfasdfasdf",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "4",
-      "completed": false,
-      "timeToFinish": "2024-01-24T12:00:14.224Z",
-      "finishAt": "2024-01-24T11:56:07.056Z"
-    },
-    {
       "id": "qij19BbfS_bEuBRbXC1Rh",
       "createdAt": 1706096451831,
       "title": "asdfasdfsaf",
@@ -517,18 +475,6 @@
       "completed": false,
       "timeToFinish": "2024-01-25T12:01:18.000Z",
       "finishAt": "2024-01-24T11:57:33.977Z"
-    },
-    {
-      "id": "ijmdUj5qUje6-9GQhaoRb",
-      "createdAt": 1706096454251,
-      "title": "asdfasdfasdf",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "4",
-      "completed": false,
-      "timeToFinish": "2024-01-27T12:00:33.078Z",
-      "finishAt": null
     },
     {
       "id": "xXuwgwEALFvxFTA-WTh0h",
@@ -565,18 +511,6 @@
       "finishAt": "2024-01-24T11:59:25.200Z"
     },
     {
-      "id": "PbJtCmtlcU8ecjCgCoKQh",
-      "createdAt": 1706097466446,
-      "title": "lllllllll",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "4",
-      "completed": false,
-      "timeToFinish": "2024-01-25T12:00:22.392Z",
-      "finishAt": "2024-01-24T11:57:48.424Z"
-    },
-    {
       "id": "4rTRC-xrqmvnmMdHHN-x_",
       "createdAt": "2024-01-24T12:00:19.533Z",
       "title": "asdfasdfasdf",
@@ -596,7 +530,7 @@
       "starred": false,
       "listId": "1",
       "completed": false,
-      "timeToFinish": "2024-01-24T12:01:23.114Z"
+      "timeToFinish": null
     }
   ]
 }
