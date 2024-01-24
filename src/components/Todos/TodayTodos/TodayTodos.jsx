@@ -24,10 +24,8 @@ function TodayTodos() {
 
     // fetching completed todos to show
     const completedTodos = useSelector(selectCompletedTodosForToday);
-    console.log("completed toods for today", completedTodos);
     // fetching uncompleted todos to show on button click
     const uncompletedTodos = useSelector(selectUncompletedTodosForToday);
-    console.log("UNcompleted toods for today", uncompletedTodos);
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -37,17 +35,22 @@ function TodayTodos() {
 
     const handleAddTask = (e) => {
         e.preventDefault();
+
+        const currentDate = new Date();
+        const formattedDate = currentDate.toISOString();
+
         addTodo({
             id: nanoid(),
-            createdAt: Date.now(),
+            createdAt: formattedDate,
             title: title,
             notes: "",
             file: null,
             starred: false,
             listId: activeList,
             completed: false,
-            timeToFinish: new Date.now(),
+            timeToFinish: formattedDate,
         });
+
         setTitle("");
     };
 
@@ -75,8 +78,8 @@ function TodayTodos() {
                             <Todo key={todo} todoId={todo} />
                         </li>
                     ))}
-                    <li>
-                        {(uncompletedTodos.length > 0 || completedTodos.length > 0) && (
+                    <li key="show completed todo button">
+                        {completedTodos.length > 0 && (
                             <div
                                 className={`completed-todos-button-container ${
                                     showCompletedTodos ? "open" : ""
@@ -99,7 +102,9 @@ function TodayTodos() {
                     {showCompletedTodos &&
                         completedTodos.map((completedTodo) => (
                             <li key={completedTodo} className="todo">
-                                {completedTodo && <Todo todoId={completedTodo} />}
+                                {completedTodo && (
+                                    <Todo todoId={completedTodo} key={completedTodo} />
+                                )}
                             </li>
                         ))}
                 </ul>

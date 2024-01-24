@@ -84,7 +84,7 @@ function List({listId}) {
                 left: 0,
             }}
             style={{backgroundColor: "#202020"}}
-            placement="bottomCenter"
+            placement="bottom"
             className="list-container"
         >
             {editing ? (

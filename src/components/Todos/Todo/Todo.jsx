@@ -25,14 +25,12 @@ function Todo({todoId}) {
     const lists = useSelector(selectAllLists);
     const dispatch = useDispatch();
 
-    console.log("ID FROM TODO COMPONENT", todoId);
-
     const todo = useSelector((state) => selectTodoById(state, todoId));
 
     const handleDatePickerChange = async (date) => {
         updateTodo({
             id: todoId,
-            finishAt: date,
+            timeToFinish: date,
         });
     };
 
@@ -50,7 +48,7 @@ function Todo({todoId}) {
                 key="SetForToday"
                 onClick={() => {
                     let today = new Date();
-                    updateTodo({id: todoId, finishAt: today});
+                    updateTodo({id: todoId, timeToFinish: today});
                 }}
             >
                 <CalendarOutlined />
@@ -62,7 +60,7 @@ function Todo({todoId}) {
                     let today = new Date();
                     const tomorrow = new Date(today);
                     tomorrow.setDate(today.getDate() + 1);
-                    updateTodo({id: todoId, finishAt: tomorrow});
+                    updateTodo({id: todoId, timeToFinish: tomorrow});
                 }}
             >
                 <CalendarOutlined />
@@ -71,7 +69,7 @@ function Todo({todoId}) {
             <Menu.Item
                 key="RemoveDate"
                 onClick={() => {
-                    updateTodo({id: todoId, finishAt: null});
+                    updateTodo({id: todoId, timeToFinish: null});
                 }}
             >
                 <MinusCircleOutlined />
@@ -153,15 +151,15 @@ function Todo({todoId}) {
                     <input
                         type="checkbox"
                         className="checkbox"
-                        checked={todo.completed}
+                        defaultChecked={todo.completed}
                         onClick={handleToggleTodo}
                     />
                     <div className={`todo-title ${todo.completed ? "checked" : ""}`}>
                         <p>{todo.title}</p>
-                        {todo.finishAt && (
+                        {todo.timeToFinish && (
                             <p className="todo-finishAt">
                                 {(() => {
-                                    const finishDate = new Date(todo.finishAt);
+                                    const finishDate = new Date(todo.timeToFinish);
                                     const today = new Date();
                                     const tomorrow = new Date();
                                     tomorrow.setDate(today.getDate() + 1);

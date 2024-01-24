@@ -42,7 +42,7 @@ function TodayTodos() {
             starred: true,
             listId: activeList,
             completed: false,
-            timeToFinish: new Date.now(),
+            timeToFinish: null,
         });
         setTitle("");
     };

@@ -137,7 +137,7 @@ export const selectCompletedTodosForToday = createSelector(
     (allTodos) => {
         const currentTime = new Date();
         return allTodos
-            .filter((todo) => todo.completed && isSameDate(new Date(todo.finishAt), currentTime))
+            .filter((todo) => todo.completed && isSameDate(new Date(todo.timeToFinish), currentTime))
             .map((todo) => todo.id);
     }
 );
@@ -147,7 +147,7 @@ export const selectUncompletedTodosForToday = createSelector(
     (allTodos) => {
         const currentTime = new Date();
         return allTodos
-            .filter((todo) => !todo.completed && isSameDate(new Date(todo.finishAt), currentTime))
+            .filter((todo) => !todo.completed && isSameDate(new Date(todo.timeToFinish), currentTime))
             .map((todo) => todo.id);
     }
 );

@@ -24,7 +24,6 @@ function TodoList() {
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
     const sortCriteria = useSelector(selectSortingCriteria);
 
-    
     // fetching completed todos to show
     const completedTodos = useSelector(selectCompletedTodos);
     // fetching uncompleted todos to show on button click
@@ -80,7 +79,7 @@ function TodoList() {
                             <Todo key={todo.id} todoId={todo.id} />
                         </li>
                     ))}
-                    <li>
+                    <li key="show completed todo button">
                         {completedTodos.length > 0 && (
                             <div
                                 className={`completed-todos-button-container ${
@@ -104,7 +103,9 @@ function TodoList() {
                     {showCompletedTodos &&
                         completedTodos.map((completedTodo) => (
                             <li key={completedTodo} className="todo">
-                                {completedTodo && <Todo todoId={completedTodo} />}
+                                {completedTodo && (
+                                    <Todo todoId={completedTodo} key={completedTodo} />
+                                )}
                             </li>
                         ))}
                 </ul>

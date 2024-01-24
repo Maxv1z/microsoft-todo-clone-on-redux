@@ -188,16 +188,6 @@
       "finishAt": "2024-01-24T11:33:21.306Z"
     },
     {
-      "id": "NC-ToTygzeCnWl38mwsH0",
-      "createdAt": 1705914626252,
-      "title": "asdfasdfasdfasdf",
-      "notes": "",
-      "file": null,
-      "starred": true,
-      "listId": null,
-      "completed": false
-    },
-    {
       "id": "WiJoSj9SXpuG_-gJ0lRCt",
       "createdAt": 1705914633162,
       "title": "zzzz",
@@ -301,7 +291,8 @@
       "starred": false,
       "listId": "3",
       "completed": false,
-      "timeToFinish": null
+      "timeToFinish": null,
+      "finishAt": "2024-01-24T11:59:26.223Z"
     },
     {
       "id": "ypJ5DGbGvOZFN7DJbgIet",
@@ -312,7 +303,8 @@
       "starred": false,
       "listId": "4",
       "completed": false,
-      "timeToFinish": null
+      "timeToFinish": null,
+      "finishAt": "2024-01-24T11:56:33.504Z"
     },
     {
       "id": "bmSybLElb8R2qte4kBTxs",
@@ -323,7 +315,8 @@
       "starred": false,
       "listId": "4",
       "completed": false,
-      "timeToFinish": null
+      "timeToFinish": "2024-01-24T12:00:12.816Z",
+      "finishAt": "2024-01-24T11:56:31.961Z"
     },
     {
       "id": "yZlxNS6Eh90fT0T4E4yVB",
@@ -500,6 +493,110 @@
       "listId": null,
       "completed": false,
       "timeToFinish": null
+    },
+    {
+      "id": "skU_7s_fWo2rpVl6Pcm8Z",
+      "createdAt": 1706096403757,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "4",
+      "completed": false,
+      "timeToFinish": "2024-01-24T12:00:14.224Z",
+      "finishAt": "2024-01-24T11:56:07.056Z"
+    },
+    {
+      "id": "qij19BbfS_bEuBRbXC1Rh",
+      "createdAt": 1706096451831,
+      "title": "asdfasdfsaf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "1",
+      "completed": false,
+      "timeToFinish": "2024-01-25T12:01:18.000Z",
+      "finishAt": "2024-01-24T11:57:33.977Z"
+    },
+    {
+      "id": "ijmdUj5qUje6-9GQhaoRb",
+      "createdAt": 1706096454251,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "4",
+      "completed": false,
+      "timeToFinish": "2024-01-27T12:00:33.078Z",
+      "finishAt": null
+    },
+    {
+      "id": "xXuwgwEALFvxFTA-WTh0h",
+      "createdAt": 1706096564448,
+      "title": "asdfasdfasf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "1",
+      "completed": false,
+      "timeToFinish": 24
+    },
+    {
+      "id": "rZex3uhCNBMtr1waFw8Uk",
+      "createdAt": 1706096681218,
+      "title": "asdfasfasf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "1",
+      "completed": false,
+      "timeToFinish": 24
+    },
+    {
+      "id": "l8XL1k8b_HIZZFrifSgPk",
+      "createdAt": "2024-01-24T11:54:57.824Z",
+      "title": "Adding new task that will be for today",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null,
+      "finishAt": "2024-01-24T11:59:25.200Z"
+    },
+    {
+      "id": "PbJtCmtlcU8ecjCgCoKQh",
+      "createdAt": 1706097466446,
+      "title": "lllllllll",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "4",
+      "completed": false,
+      "timeToFinish": "2024-01-25T12:00:22.392Z",
+      "finishAt": "2024-01-24T11:57:48.424Z"
+    },
+    {
+      "id": "4rTRC-xrqmvnmMdHHN-x_",
+      "createdAt": "2024-01-24T12:00:19.533Z",
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "1",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "H1QZjHVMMsIvEPb7cJARL",
+      "createdAt": "2024-01-24T12:01:23.114Z",
+      "title": "New task for today",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "1",
+      "completed": false,
+      "timeToFinish": "2024-01-24T12:01:23.114Z"
     }
   ]
 }

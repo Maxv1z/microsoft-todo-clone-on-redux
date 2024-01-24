@@ -30,7 +30,9 @@ function TodosTopBar() {
 
     const menu = (
         <Menu>
-            {list.id !== 1 && <Menu.Item key="rename">Rename list</Menu.Item>}
+            {list.id != 1 && list.id != 2 && (
+                <Menu.Item key="rename">Rename list</Menu.Item>
+            )}
             <Menu.SubMenu key="submenu" title="Sorting...">
                 <Menu.Item
                     onClick={() => dispatch(changeSortingCriteria("createdAt"))}
@@ -45,13 +47,13 @@ function TodosTopBar() {
                     Sort by title
                 </Menu.Item>
                 <Menu.Item
-                    onClick={() => dispatch(changeSortingCriteria("starred"))}
+                    onClick={() => dispatch(changeSortingCriteria("starri sed"))}
                     style={menuItemStyle}
                 >
                     Sort by star
                 </Menu.Item>
             </Menu.SubMenu>
-            {list.id !== 1 && (
+            {list.id != 1 && list.id != 2 && (
                 <Menu.Item
                     key="delete"
                     danger
