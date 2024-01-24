@@ -28,8 +28,8 @@ function TodosTopBar() {
     }
 
     const todos = useSelector(selectTodosByListId);
+
     const onDeleteList = async () => {
-        console.log("TOODS FROM TOODS TOP BAR", todos);
         const idsToDelete = todos.map((todo) => todo.id);
         // Use map to create an array of Promises for each deleteTodo call
         const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));

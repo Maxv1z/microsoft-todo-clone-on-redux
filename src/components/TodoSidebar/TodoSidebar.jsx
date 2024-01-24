@@ -1,5 +1,6 @@
 import "./TodoSidebar.style.scss";
 import ResizableTextarea from "./ResizableTextarea";
+import ResizableTitle from "./ResizableTitle";
 import {useDispatch, useSelector} from "react-redux";
 
 import {
@@ -43,7 +44,7 @@ function TodoSidebar({activeTodo}) {
                         checked={todo.completed}
                         onClick={handleToggleTodo}
                     />
-                    <p className="title">{todo.title}</p>
+                    <ResizableTitle todoId={todo.id} />
                 </div>
                 <div className="block add-for-today">
                     <button>Add task for today</button>

@@ -50,8 +50,9 @@
         .todo-title-container {
             display: flex;
             flex-direction: row;
-            height: 50px;
+            height: fit-content;
             padding: 10px;
+            align-items: center;
 
             .checkbox {
                 appearance: none;
@@ -96,8 +97,19 @@
             }
 
             .title {
+                display: block;
                 margin: 0 0 0 5px;
-                font-size: 1.4rem;
+                font-size: 1rem;
+                resize: none;
+                min-height: 40px;
+                background-color: #323232;
+                outline: none;
+                border: none;
+                color: white;
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+                overflow-y: hidden;
             }
         }
 
