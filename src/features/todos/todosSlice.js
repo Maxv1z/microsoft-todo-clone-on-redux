@@ -40,6 +40,14 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
             }),
             invalidatesTags: ['Todos']
         }),
+        deleteTodos: builder.mutation({
+            query: (ids) => ({
+                url: `/todos/delete-multiple`,
+                method: 'DELETE',
+                body: { ids }
+            }),
+            invalidatesTags: ['Todos']
+        }),
     }),
 });
 
@@ -48,6 +56,7 @@ export const {
     useAddTodoMutation,
     useDeleteTodoMutation,
     useUpdateTodoMutation,
+    useDeleteTodosMutation
 } = extendedApiSlice;
 
 export const selectTodoResult = extendedApiSlice.endpoints.getTodos.select()
@@ -77,6 +86,18 @@ export const selectCompletedTodos = createSelector(
         return allTodos
             .filter((todo) => todo.completed == true && todo.listId == activeList)
             .map((todo) => todo.id);
+    }
+);
+
+// Select todos for a specific list
+export const selectTodosByListId = createSelector(
+    [selectAllTodos, activeList],
+    (allTodos, activeList) => {
+        return allTodos
+            .filter((todo) => todo.listId === activeList)
+            .map((todo) => ({
+                id: todo.id,
+            }));
     }
 );
 

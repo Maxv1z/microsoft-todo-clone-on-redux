@@ -6,6 +6,11 @@ import {
     useUpdateListMutation,
 } from "../../features/lists/listsSlice";
 
+import {
+    useDeleteTodoMutation,
+    selectTodosByListId,
+} from "../../features/todos/todosSlice";
+
 import {changeListChoice} from "../../features/chosenList/chosenListSlice";
 import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 import "./List.style.scss";
@@ -14,20 +19,30 @@ import {Dropdown, Menu, Input} from "antd";
 function List({listId}) {
     const [deleteList] = useDeleteListMutation();
     const [updateList] = useUpdateListMutation();
+    const [deleteTodo] = useDeleteTodoMutation();
 
     const [editing, setEditing] = useState(false);
     const [newName, setNewName] = useState("");
 
-    const onDeleteList = () => {
-        deleteList({id: listId});
+    const dispatch = useDispatch();
+
+    const onDeleteList = async () => {
+        const todos = useSelector(selectTodosByListId);
+        const idsToDelete = todos.map((todo) => todo.id);
+        // Use map to create an array of Promises for each deleteTodo call
+        const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
+        // Wait for all todo deletions to complete
+        await Promise.all(deletePromises);
+        // Continue with the rest of the code
+        await deleteList({id: listId});
+        dispatch(changeActiveTodo(null));
+        dispatch(changeListChoice(1));
     };
 
-    const dispatch = useDispatch();
     const list = useSelector((state) => selectListById(state, listId));
 
     const handleFilterChange = (listId) => {
         dispatch(changeListChoice(listId));
-        console.log("ACTIVE LIST CHNAGE", listId);
         dispatch(changeActiveTodo(null));
     };
 

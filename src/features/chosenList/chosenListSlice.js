@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { selectAllLists } from '../lists/listsSlice';
 
-const initialState = { filter: '3' };
+const initialState = { filter: '1' };
 
 const chosenListSlice = createSlice({
     name: 'chosenList',

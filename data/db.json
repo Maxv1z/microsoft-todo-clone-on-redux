@@ -15,34 +15,9 @@
     {
       "id": "4",
       "name": "Work Tasks"
-    },
-    {
-      "id": "3sWWAo_ZeNPHuUiy9J4U6",
-      "name": "Home list"
     }
   ],
   "todos": [
-    {
-      "id": "1",
-      "createdAt": "2024-01-17T12:00:00",
-      "timeToFinish": "1 hour",
-      "title": "Complete Front-End Project",
-      "notes": "Finish the coding and debugging for the project.",
-      "file": "project_code.zip",
-      "starred": true,
-      "listId": 1,
-      "completed": true
-    },
-    {
-      "id": "4",
-      "createdAt": "2024-01-21T14:00:00",
-      "timeToFinish": "45 minutes",
-      "title": "French Language Study",
-      "notes": "Update our notes is easy now",
-      "file": "french_notes.txt",
-      "starred": false,
-      "listId": 2
-    },
     {
       "id": "f21X6QhaMezcNiLitlGeF",
       "createdAt": 1705574730157,
@@ -89,7 +64,7 @@
       "notes": "",
       "file": null,
       "starred": false,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": true
     },
     {
@@ -99,7 +74,7 @@
       "notes": "",
       "file": null,
       "starred": false,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": true
     },
     {
@@ -109,7 +84,7 @@
       "notes": "",
       "file": null,
       "starred": false,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": true
     },
     {
@@ -141,7 +116,7 @@
       "notes": "",
       "file": null,
       "starred": false,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": true
     },
     {
@@ -151,7 +126,7 @@
       "notes": "",
       "file": null,
       "starred": false,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": true
     },
     {
@@ -161,7 +136,7 @@
       "notes": "",
       "file": null,
       "starred": false,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": true
     },
     {
@@ -208,7 +183,7 @@
       "notes": "",
       "file": null,
       "starred": true,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
+      "listId": null,
       "completed": false,
       "finishAt": "2024-01-24T11:33:21.306Z"
     },
@@ -312,8 +287,8 @@
       "notes": "",
       "file": null,
       "starred": true,
-      "listId": "3sWWAo_ZeNPHuUiy9J4U6",
-      "completed": false,
+      "listId": null,
+      "completed": true,
       "timeToFinish": null,
       "finishAt": null
     },
@@ -359,6 +334,171 @@
       "starred": false,
       "listId": "4",
       "completed": true,
+      "timeToFinish": null
+    },
+    {
+      "id": "C5YEkDLGHX_g1hXbleAf4",
+      "createdAt": 1706093399603,
+      "title": "asdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "ayT9E8Pg-9g0FjO9x-bqq",
+      "createdAt": 1706093399935,
+      "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "xF2Ehf1llCx8RtwpbEYqs",
+      "createdAt": 1706093400119,
+      "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "EccUbTx8I4_JB9I2Th1C_",
+      "createdAt": 1706093401305,
+      "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "1lZZCl0JQu9hR_VSMSjj3",
+      "createdAt": 1706093505208,
+      "title": "adsfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "-hfVgRKDB4l_LqrjOHtQU",
+      "createdAt": 1706093595930,
+      "title": "asdfasdfas",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "J5DoFyWZFijBa7XPK3O8k",
+      "createdAt": 1706093596088,
+      "title": "dfas",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "Am2OAiypm2BBdvPuviVoj",
+      "createdAt": 1706093596248,
+      "title": "df",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "4e8HbPTQJwvaUpGXwhn0n",
+      "createdAt": 1706093596401,
+      "title": "asf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "mF34Ji6NE_zYztdoQ_Vwz",
+      "createdAt": 1706093597261,
+      "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "KSGG8MqOleQkt190aW1MN",
+      "createdAt": 1706093943326,
+      "title": "adsfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "N6LFCOO51WMtXwDX0wpGJ",
+      "createdAt": 1706094799563,
+      "title": "adsfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "pBMrbwlYmVUX9UlZCsMD5",
+      "createdAt": 1706094800590,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "jymZPvBoTTxLXDhHxuxh7",
+      "createdAt": 1706094855341,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "uOH30XR2AgemrlVPhFhdA",
+      "createdAt": 1706094857184,
+      "title": "asdfasfdasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": null,
+      "completed": false,
       "timeToFinish": null
     }
   ]

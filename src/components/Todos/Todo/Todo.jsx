@@ -135,12 +135,20 @@ function Todo({todoId}) {
             style={{backgroundColor: "#202020"}}
             placement="bottom"
             className="list-container"
-            onClick={(e) => {
-                e.preventDefault();
-                dispatch(changeActiveTodo(todoId));
-            }}
         >
-            <article className={`todo ${todo.completed ? "checked" : ""}`}>
+            <article
+                className={`todo ${todo.completed ? "checked" : ""}`}
+                onClick={(e) => {
+                    // Prevent activating todo by clicking toggle todo, checkbox, or star-container
+                    if (
+                        !e.target.classList.contains("checkbox") &&
+                        !e.target.classList.contains("star-container") &&
+                        !e.target.classList.contains("star-icon")
+                    ) {
+                        dispatch(changeActiveTodo(todoId));
+                    }
+                }}
+            >
                 <div className="checkbox-container">
                     <input
                         type="checkbox"
@@ -179,7 +187,13 @@ function Todo({todoId}) {
                         )}
                     </div>
                 </div>
-                <div className="star-container" onClick={() => handleStarTodo()}>
+                <div
+                    className="star-container"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        handleStarTodo();
+                    }}
+                >
                     {todo.starred ? (
                         <StarFilled className="star-icon" />
                     ) : (
