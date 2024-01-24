@@ -14,6 +14,7 @@ import {selectSortingCriteria} from "../../../features/sortingCriteria/sortingCr
 
 import "./TodoList.style.scss";
 import TodayTodos from "../TodayTodos/TodayTodos";
+import StarredTodos from "../StarredTodos/StarredTodos";
 
 function TodoList() {
     const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
@@ -22,10 +23,8 @@ function TodoList() {
     const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
     const sortCriteria = useSelector(selectSortingCriteria);
-    console.log("sortCriteria", sortCriteria);
 
-    // const todosIdsFromFilter = useSelector(selectTodoIdsByFilter);
-
+    
     // fetching completed todos to show
     const completedTodos = useSelector(selectCompletedTodos);
     // fetching uncompleted todos to show on button click
@@ -37,6 +36,8 @@ function TodoList() {
         return <p>{error.message}</p>;
     } else if (activeList == 1) {
         return <TodayTodos />;
+    } else if (activeList == 2) {
+        return <StarredTodos />;
     }
 
     const handleAddTask = (e) => {
@@ -80,7 +81,7 @@ function TodoList() {
                         </li>
                     ))}
                     <li>
-                        {(uncompletedTodos.length > 0 || completedTodos.length > 0) && (
+                        {completedTodos.length > 0 && (
                             <div
                                 className={`completed-todos-button-container ${
                                     showCompletedTodos ? "open" : ""

@@ -6,10 +6,14 @@
     },
     {
       "id": "2",
-      "name": "Personal Tasks"
+      "name": "Starred"
     },
     {
       "id": "3",
+      "name": "Personal Tasks"
+    },
+    {
+      "id": "4",
       "name": "Work Tasks"
     },
     {
@@ -203,7 +207,7 @@
       "title": "Writing new things",
       "notes": "",
       "file": null,
-      "starred": false,
+      "starred": true,
       "listId": "3sWWAo_ZeNPHuUiy9J4U6",
       "completed": false,
       "finishAt": "2024-01-24T11:33:21.306Z"
@@ -226,7 +230,8 @@
       "file": null,
       "starred": true,
       "listId": null,
-      "completed": false
+      "completed": false,
+      "finishAt": "2024-01-24T10:00:43.324Z"
     },
     {
       "id": "ZimpASHgF9xch2KTj1Pbx",
@@ -236,7 +241,7 @@
       "file": null,
       "starred": true,
       "listId": null,
-      "completed": false
+      "completed": true
     },
     {
       "id": "O-H83gHGUB_IL9cEdeVu8",
@@ -246,7 +251,7 @@
       "file": null,
       "starred": true,
       "listId": null,
-      "completed": false
+      "completed": true
     },
     {
       "id": "-jZ7pS7UrhyyGK0DcrPO8",
@@ -297,7 +302,8 @@
       "file": null,
       "starred": true,
       "listId": null,
-      "completed": false
+      "completed": false,
+      "finishAt": "2024-01-25T10:00:41.052Z"
     },
     {
       "id": "-kC-3USwQbfAhY_j-x718",
@@ -305,11 +311,55 @@
       "title": "asdfasdfasdfasdf",
       "notes": "",
       "file": null,
-      "starred": false,
+      "starred": true,
       "listId": "3sWWAo_ZeNPHuUiy9J4U6",
       "completed": false,
       "timeToFinish": null,
       "finishAt": null
+    },
+    {
+      "id": "pT7Hq9-i_e7uY9KMQej5F",
+      "createdAt": 1706090516858,
+      "title": "Add new task ",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "ypJ5DGbGvOZFN7DJbgIet",
+      "createdAt": 1706090526041,
+      "title": "New task to work tasks",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "4",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "bmSybLElb8R2qte4kBTxs",
+      "createdAt": 1706090529262,
+      "title": "completed tasksk",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "4",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "yZlxNS6Eh90fT0T4E4yVB",
+      "createdAt": 1706090609797,
+      "title": "asdfasdasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "4",
+      "completed": true,
+      "timeToFinish": null
     }
   ]
 }

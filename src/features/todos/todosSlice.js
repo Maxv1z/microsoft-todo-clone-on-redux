@@ -80,6 +80,15 @@ export const selectCompletedTodos = createSelector(
     }
 );
 
+export const selectStarredTodos = createSelector(
+    [selectAllTodos],
+    (allTodos) => {
+        return allTodos
+            .filter((todo) => todo.starred === true && todo.completed === false)
+            .map((todo) => todo.id);
+    }
+);
+
 export const selectUncompletedTodos = createSelector(
     [selectAllTodos, activeList],
     (allTodos, activeList) => {
@@ -93,7 +102,6 @@ export const selectUncompletedTodos = createSelector(
             }));
     }
 );
-
 
 const isSameDate = (date1, date2) => {
     return (
