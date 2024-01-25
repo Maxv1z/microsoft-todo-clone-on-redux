@@ -54,19 +54,22 @@ function TodosTopBar() {
             )}
             <Menu.SubMenu key="submenu" title="Sorting...">
                 <Menu.Item
+                    key="createdAt"
                     onClick={() => dispatch(changeSortingCriteria("createdAt"))}
                     style={menuItemStyle}
                 >
                     Sort by date
                 </Menu.Item>
                 <Menu.Item
+                    key="title"
                     onClick={() => dispatch(changeSortingCriteria("title"))}
                     style={menuItemStyle}
                 >
                     Sort by title
                 </Menu.Item>
                 <Menu.Item
-                    onClick={() => dispatch(changeSortingCriteria("starri sed"))}
+                    key="star"
+                    onClick={() => dispatch(changeSortingCriteria("starred"))}
                     style={menuItemStyle}
                 >
                     Sort by star

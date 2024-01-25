@@ -23,7 +23,6 @@ function TodayTodos() {
 
     // fetching completed todos to show
     const starredTodos = useSelector(selectStarredTodos);
-    console.log("STARRED TODOS FROM COMPONENT", starredTodos);
 
     if (isLoading) {
         return <p>Loading...</p>;

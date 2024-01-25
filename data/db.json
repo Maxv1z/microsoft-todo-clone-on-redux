@@ -18,7 +18,7 @@
     },
     {
       "id": "Fn8_FcxbLzXqh-XcL6h07",
-      "name": "New list"
+      "name": "Last list"
     }
   ],
   "todos": [
@@ -288,18 +288,6 @@
       "finishAt": null
     },
     {
-      "id": "pT7Hq9-i_e7uY9KMQej5F",
-      "createdAt": 1706090516858,
-      "title": "Changn title of the todo yappi",
-      "notes": "dfdf",
-      "file": null,
-      "starred": false,
-      "listId": "3",
-      "completed": false,
-      "timeToFinish": null,
-      "finishAt": "2024-01-24T11:59:26.223Z"
-    },
-    {
       "id": "C5YEkDLGHX_g1hXbleAf4",
       "createdAt": 1706093399603,
       "title": "asdfasdf",
@@ -499,18 +487,6 @@
       "timeToFinish": 24
     },
     {
-      "id": "l8XL1k8b_HIZZFrifSgPk",
-      "createdAt": "2024-01-24T11:54:57.824Z",
-      "title": "New title for the todo yappy",
-      "notes": "dfsfd",
-      "file": null,
-      "starred": false,
-      "listId": "3",
-      "completed": false,
-      "timeToFinish": null,
-      "finishAt": "2024-01-24T11:59:25.200Z"
-    },
-    {
       "id": "4rTRC-xrqmvnmMdHHN-x_",
       "createdAt": "2024-01-24T12:00:19.533Z",
       "title": "asdfasdfasdf",
@@ -529,6 +505,94 @@
       "file": null,
       "starred": false,
       "listId": "1",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "ih1M0y5li54EKPiNNDS2B",
+      "createdAt": 1706173868608,
+      "title": "asdfadsf",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": "2",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "EJpQ8L3ZC5FLI3GJ1h_Qu",
+      "createdAt": 1706173870505,
+      "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": "2",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "t7Jf8pTy25gvXUZDgXZZ_",
+      "createdAt": 1706174298847,
+      "title": "first ",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "HE7NqFhixpCt04dq_BSrd",
+      "createdAt": 1706174300633,
+      "title": "second",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "jejB7P-M4CILQbNPv0h4F",
+      "createdAt": 1706174302080,
+      "title": "third",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "J1zIGMj8Ym06aB368IfxQ",
+      "createdAt": 1706174303593,
+      "title": "fourth",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "2RX2-PSUbe_QIqVd9hEy1",
+      "createdAt": 1706174333075,
+      "title": "fifth",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "kMy312n6es4gLlO99pVnN",
+      "createdAt": 1706174336626,
+      "title": "six",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
       "completed": false,
       "timeToFinish": null
     }

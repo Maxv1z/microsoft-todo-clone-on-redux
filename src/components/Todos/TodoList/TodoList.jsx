@@ -57,14 +57,14 @@ function TodoList() {
 
     const sortTodos = (uncompletedTodos) => {
         return [...uncompletedTodos].sort((a, b) => {
-            if (sortCriteria === "createdAt") {
-                return b.createdAt - a.createdAt;
-            } else if (sortCriteria === "title") {
+            if (sortCriteria == "createdAt") {
+                return a.createdAt - b.createdAt;
+            } else if (sortCriteria == "title") {
                 return a.title.localeCompare(b.title);
-            } else if (sortCriteria === "starred") {
+            } else if (sortCriteria == "starred") {
                 return b.starred - a.starred;
             } else {
-                return uncompletedTodos;
+                return 0;
             }
         });
     };
