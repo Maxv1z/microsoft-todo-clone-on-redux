@@ -1,4 +1,5 @@
 import "./TodosTopBar.style.scss";
+import {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {Dropdown, Menu} from "antd";
 import {
@@ -12,14 +13,40 @@ import {
     selectTodosByListId,
     useDeleteTodoMutation,
 } from "../../../features/todos/todosSlice";
+import {changeActiveTodo} from "../../../features/activeTodo/activeTodoSlice";
+
+import {Modal} from "antd";
 
 function TodosTopBar() {
     const {isLoading, error} = useGetListsQuery();
     const [deleteList] = useDeleteListMutation();
     const [deleteTodo] = useDeleteTodoMutation();
 
+    const [isModalOpen, setModalOpen] = useState(false);
+
     const activeList = useSelector(selectActiveList);
     const dispatch = useDispatch();
+    const todos = useSelector(selectTodosByListId);
+    const list = useSelector((state) => selectListById(state, activeList));
+
+    const idsToDelete = todos.map((todo) => todo.id);
+    const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+    };
+
+    const handleModalOk = async () => {
+        setModalOpen(false);
+        await Promise.all(deletePromises);
+        await deleteList({id: list.id});
+        dispatch(changeListChoice(1));
+        dispatch(changeActiveTodo(null));
+    };
+
+    const handleModalCancel = () => {
+        setModalOpen(false);
+    };
 
     if (isLoading) {
         return <>Loading...</>;
@@ -27,25 +54,21 @@ function TodosTopBar() {
         return <>{error}</>;
     }
 
-    const todos = useSelector(selectTodosByListId);
-
-    const onDeleteList = async () => {
-        const idsToDelete = todos.map((todo) => todo.id);
-        // Use map to create an array of Promises for each deleteTodo call
-        const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
-        // Wait for all todo deletions to complete
-        await Promise.all(deletePromises);
-        // Continue with the rest of the code
-        await deleteList({id: list.id});
-        dispatch(changeListChoice(1));
-        dispatch(changeActiveTodo(null));
-    };
+    // const onDeleteList = async () => {
+    //     const idsToDelete = todos.map((todo) => todo.id);
+    //     // Use map to create an array of Promises for each deleteTodo call
+    //     const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
+    //     // Wait for all todo deletions to complete
+    //     await Promise.all(deletePromises);
+    //     // Continue with the rest of the code
+    //     await deleteList({id: list.id});
+    //     dispatch(changeListChoice(1));
+    //     dispatch(changeActiveTodo(null));
+    // };
 
     const menuItemStyle = {
         width: "300px",
     };
-
-    const list = useSelector((state) => selectListById(state, activeList));
 
     const menu = (
         <Menu>
@@ -80,7 +103,7 @@ function TodosTopBar() {
                     key="delete"
                     danger
                     style={{borderTop: "1px solid gray"}}
-                    onClick={onDeleteList}
+                    onClick={handleOpenModal}
                 >
                     Delete List
                 </Menu.Item>
@@ -109,6 +132,35 @@ function TodosTopBar() {
                 </Dropdown>
             </div>
             <div className="sorting-buttons"></div>
+            <Modal
+                visible={isModalOpen}
+                onOk={handleModalOk}
+                onCancel={handleModalCancel}
+                centered={true}
+                className="modal-style"
+                footer={[
+                    <button
+                        key="delete"
+                        className="ant-btn ant-btn-danger"
+                        onClick={handleModalOk}
+                    >
+                        Delete
+                    </button>,
+                    <button
+                        key="cancel"
+                        className="ant-btn ant-btn-default"
+                        onClick={handleModalCancel}
+                    >
+                        Cancel
+                    </button>,
+                ]}
+            >
+                <h1>Delete list</h1>
+                <p>
+                    List <strong>{list.name}</strong> will be permanently deleted with all
+                    todos.
+                </p>
+            </Modal>
         </div>
     );
 }

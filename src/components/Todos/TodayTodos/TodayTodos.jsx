@@ -74,7 +74,7 @@ function TodayTodos() {
             <div className="todos-list-container">
                 <ul>
                     {sortTodos(uncompletedTodos).map((todo) => (
-                        <li key={todo.id} className="todo">
+                        <li key={todo} className="todo">
                             <Todo key={todo} todoId={todo} />
                         </li>
                     ))}

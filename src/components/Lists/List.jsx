@@ -14,7 +14,7 @@ import {
 import {changeListChoice} from "../../features/chosenList/chosenListSlice";
 import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 import "./List.style.scss";
-import {Dropdown, Menu, Input} from "antd";
+import {Dropdown, Menu, Input, Modal} from "antd";
 
 function List({listId}) {
     const [deleteList] = useDeleteListMutation();
@@ -27,16 +27,27 @@ function List({listId}) {
     const dispatch = useDispatch();
 
     const todos = useSelector(selectTodosByListId);
-    const onDeleteList = async () => {
+
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+    };
+
+    const handleModalOk = async () => {
+        setModalOpen(false);
+
         const idsToDelete = todos.map((todo) => todo.id);
-        // Use map to create an array of Promises for each deleteTodo call
         const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
-        // Wait for all todo deletions to complete
         await Promise.all(deletePromises);
-        // Continue with the rest of the code
         await deleteList({id: listId});
+
         dispatch(changeActiveTodo(null));
         dispatch(changeListChoice(1));
+    };
+
+    const handleModalCancel = () => {
+        setModalOpen(false);
     };
 
     const list = useSelector((state) => selectListById(state, listId));
@@ -64,7 +75,7 @@ function List({listId}) {
                         Rename list
                     </Menu.Item>
 
-                    <Menu.Item key="delete" danger onClick={onDeleteList}>
+                    <Menu.Item key="delete" danger onClick={handleOpenModal}>
                         Delete
                     </Menu.Item>
                 </Menu>
@@ -73,48 +84,79 @@ function List({listId}) {
     );
 
     return (
-        <Dropdown
-            overlay={menu}
-            trigger={["contextMenu"]}
-            onClick={() => handleFilterChange(listId)}
-            overlayStyle={{
-                width: "350px",
-                minWidth: "fit-content",
-                textAlign: "center",
-                left: 0,
-            }}
-            style={{backgroundColor: "#202020"}}
-            placement="bottom"
-            className="list-container"
-        >
-            {editing ? (
-                <Input
-                    style={{
-                        width: "100%",
-                        backgroundColor: "#202020",
-                        color: "white",
-                        outline: "none",
-                        borderRadius: "3px",
-                        borderColor: "#333",
-                        fontSize: "18px",
-                    }}
-                    autoFocus
-                    value={newName}
-                    onChange={(e) => setNewName(e.target.value)}
-                    onPressEnter={handleRenameConfirm}
-                    onBlur={() => setEditing(false)}
-                />
-            ) : (
-                <h1
-                    className="list-name"
-                    style={{
-                        margin: "0 0 0 10px",
-                    }}
-                >
-                    {list.name}
-                </h1>
-            )}
-        </Dropdown>
+        <>
+            <Dropdown
+                overlay={menu}
+                trigger={["contextMenu"]}
+                onClick={() => handleFilterChange(listId)}
+                overlayStyle={{
+                    width: "350px",
+                    minWidth: "fit-content",
+                    textAlign: "center",
+                    left: 0,
+                }}
+                style={{backgroundColor: "#202020"}}
+                placement="bottom"
+                className="list-container"
+            >
+                {editing ? (
+                    <Input
+                        style={{
+                            width: "100%",
+                            backgroundColor: "#202020",
+                            color: "white",
+                            outline: "none",
+                            borderRadius: "3px",
+                            borderColor: "#333",
+                            fontSize: "18px",
+                        }}
+                        autoFocus
+                        value={newName}
+                        onChange={(e) => setNewName(e.target.value)}
+                        onPressEnter={handleRenameConfirm}
+                        onBlur={() => setEditing(false)}
+                    />
+                ) : (
+                    <h1
+                        className="list-name"
+                        style={{
+                            margin: "0 0 0 10px",
+                        }}
+                    >
+                        {list.name}
+                    </h1>
+                )}
+            </Dropdown>
+            <Modal
+                visible={isModalOpen}
+                onOk={handleModalOk}
+                onCancel={handleModalCancel}
+                centered={true}
+                className="modal-style"
+                footer={[
+                    <button
+                        key="delete"
+                        className="ant-btn ant-btn-danger"
+                        onClick={handleModalOk}
+                    >
+                        Delete
+                    </button>,
+                    <button
+                        key="cancel"
+                        className="ant-btn ant-btn-default"
+                        onClick={handleModalCancel}
+                    >
+                        Cancel
+                    </button>,
+                ]}
+            >
+                <h1>Delete list</h1>
+                <p>
+                    List <strong>{list.name}</strong> will be permanently deleted with all
+                    todos.
+                </p>
+            </Modal>
+        </>
     );
 }
 
