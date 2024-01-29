@@ -1,34 +1,47 @@
-import React, {useRef, useLayoutEffect} from "react";
+import React, {useRef, useState} from "react";
 import {useSelector} from "react-redux";
-import {selectTodoById, useUpdateTodoMutation} from "../../features/todos/todosSlice"; // Assuming you have an updateTodoNotes action creator
+import {selectTodoById, useUpdateTodoMutation} from "../../features/todos/todosSlice";
 
 function ResizableTitle({todoId}) {
     const textbox = useRef(null);
+    const todo = useSelector((state) => selectTodoById(state, todoId));
+    const [title, setTitle] = useState(todo.title); // Local state for managing changes
     const [updateTodo] = useUpdateTodoMutation();
 
-    const todo = useSelector((state) => selectTodoById(state, todoId));
+    const adjustHeight = () => {
+        if (textbox.current) {
+            textbox.current.style.height = "inherit";
+            textbox.current.style.height = `${textbox.current.scrollHeight}px`;
+        }
+    };
 
-    function adjustHeight() {
-        textbox.current.style.height = "inherit";
-        textbox.current.style.height = `${textbox.current.scrollHeight}px`;
-    }
-
-    useLayoutEffect(adjustHeight, []);
-
-    function handleKeyDown(e) {
+    const handleInputChange = (e) => {
         adjustHeight();
-        const title = e.target.value;
+        setTitle(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
         updateTodo({id: todoId, title: title});
-    }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            handleSubmit(e);
+        }
+    };
 
     return (
-        <textarea
-            ref={textbox}
-            onChange={handleKeyDown}
-            value={todo.title}
-            className="title"
-            placeholder="Title"
-        />
+        <form onSubmit={handleSubmit}>
+            <textarea
+                ref={textbox}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                value={title}
+                className="title"
+                placeholder="Title"
+            />
+        </form>
     );
 }
 
