@@ -15,7 +15,7 @@ import {selectSortingCriteria} from "../../../features/sortingCriteria/sortingCr
 import "../TodoList/TodoList.style.scss";
 
 function TodayTodos() {
-    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
+    const {isLoading, isError, error} = useGetTodosQuery();
     const [addTodo] = useAddTodoMutation();
     const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
@@ -38,7 +38,6 @@ function TodayTodos() {
 
         const currentDate = new Date();
         const formattedDate = currentDate.toISOString();
-
         addTodo({
             id: nanoid(),
             createdAt: formattedDate,

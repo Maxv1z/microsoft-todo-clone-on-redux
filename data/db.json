@@ -389,17 +389,6 @@
       "timeToFinish": null
     },
     {
-      "id": "Aq_mzPcuCkC5RoEpQJC4Q",
-      "createdAt": 1706457914580,
-      "title": "ФІВАФІВАФІВА",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "1",
-      "completed": false,
-      "timeToFinish": null
-    },
-    {
       "id": "PCZwCygAMuqVrJWsZ0goy",
       "title": "ФІВАФІВАФІВАаffff"
     },
@@ -424,17 +413,6 @@
       "title": ""
     },
     {
-      "id": "P4y-Lfm4f9AotP5Hgn4Bg",
-      "createdAt": 1706514839481,
-      "title": "asdf",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "2",
-      "completed": false,
-      "timeToFinish": null
-    },
-    {
       "id": "U8nO6nLitJSKEq08_ET9T",
       "createdAt": 1706515980011,
       "title": "Wierd thing i have\n",
@@ -443,18 +421,7 @@
       "starred": false,
       "listId": "4",
       "completed": false,
-      "timeToFinish": null
-    },
-    {
-      "id": "JiGeZFXwwWm4UzQucJYng",
-      "createdAt": 1706516405082,
-      "title": "asdfasdfasdf",
-      "notes": "",
-      "file": null,
-      "starred": true,
-      "listId": "3",
-      "completed": false,
-      "timeToFinish": null
+      "timeToFinish": "2024-01-29T10:10:40.448Z"
     },
     {
       "id": "90gycuAUWyeHRaGl941s2",
@@ -506,10 +473,10 @@
       "title": "asdfasdfasf",
       "notes": "",
       "file": null,
-      "starred": false,
+      "starred": true,
       "listId": "3",
       "completed": false,
-      "timeToFinish": "2024-01-02T08:51:15.091Z"
+      "timeToFinish": "2024-01-29T10:14:26.936Z"
     },
     {
       "id": "1oqtnzEcEoJyovkySf1XL",
@@ -528,7 +495,7 @@
       "title": "asdfasdfasdf",
       "notes": "",
       "file": null,
-      "starred": false,
+      "starred": true,
       "listId": "3",
       "completed": false,
       "timeToFinish": "2024-01-02T08:52:14.538Z"
@@ -564,7 +531,7 @@
       "starred": false,
       "listId": "3",
       "completed": false,
-      "timeToFinish": null
+      "timeToFinish": "2024-01-29T10:10:46.912Z"
     },
     {
       "id": "XcBzosTOmwEtY0QGC77d7",
@@ -576,6 +543,17 @@
       "listId": "3",
       "completed": false,
       "timeToFinish": "2024-02-29T09:04:04.329Z"
+    },
+    {
+      "id": "fYNKKSgbIzd2IUP2apROv",
+      "createdAt": 1706522850281,
+      "title": "Search",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": "5",
+      "completed": false,
+      "timeToFinish": "2024-01-29T10:16:40.712Z"
     }
   ]
 }

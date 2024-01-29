@@ -16,6 +16,8 @@ import "./TodoList.style.scss";
 import TodayTodos from "../TodayTodos/TodayTodos";
 import StarredTodos from "../StarredTodos/StarredTodos";
 import PlannedTodos from "../PlannedTodos/PlannedTodos";
+import SearchTodos from "../SearchTodos/SearchTodos";
+import {selectIsSearch} from "../../../features/isSearching/searchingSlice";
 
 function TodoList() {
     const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
@@ -24,6 +26,7 @@ function TodoList() {
     const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
     const sortCriteria = useSelector(selectSortingCriteria);
+    const isSearch = useSelector(selectIsSearch);
 
     // fetching completed todos to show
     const completedTodos = useSelector(selectCompletedTodos);
@@ -34,6 +37,8 @@ function TodoList() {
         return <p>Loading...</p>;
     } else if (isError) {
         return <p>{error.message}</p>;
+    } else if (isSearch) {
+        return <SearchTodos />;
     } else if (activeList == 1) {
         return <TodayTodos />;
     } else if (activeList == 2) {

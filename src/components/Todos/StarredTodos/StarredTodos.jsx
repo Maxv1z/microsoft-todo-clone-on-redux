@@ -18,11 +18,11 @@ function TodayTodos() {
     const [addTodo] = useAddTodoMutation();
     const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
-    const [showCompletedTodos, setShowCompletedTodos] = useState(false);
     const sortCriteria = useSelector(selectSortingCriteria);
 
     // fetching completed todos to show
     const starredTodos = useSelector(selectStarredTodos);
+    console.log("STARRED TODOS", starredTodos);
 
     if (isLoading) {
         return <p>Loading...</p>;
