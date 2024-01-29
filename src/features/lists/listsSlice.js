@@ -20,7 +20,16 @@ export const listsApiSlice = apiSlice.injectEndpoints({
                 const sortedLists = [...res].sort((a, b) => a.id - b.id);
                 return listsAdapter.setAll(initialState, sortedLists);
             },
-            providesTags: ['Lists']
+            providesTags: (result, error, arg) =>
+                result ?
+                    [
+                        ...result.ids.map(id => ({ type: 'Lists', id })),
+                        { type: 'Lists', id: 'LIST' },
+                        { type: 'Lists', id: 'PARTIAL-LISTS' }
+                    ] : [
+                        { type: 'Lists', id: 'LIST' },
+                        { type: 'Lists', id: 'PARTIAL-LISTS' }
+                    ]
         }),
         addList: builder.mutation({
             query: (list) => ({
@@ -28,7 +37,7 @@ export const listsApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 body: list
             }),
-            invalidatesTags: ['Lists']
+            invalidatesTags: [{ type: 'Lists', id: 'LIST' }]
         }),
         updateList: builder.mutation({
             query: (list) => ({
@@ -36,14 +45,14 @@ export const listsApiSlice = apiSlice.injectEndpoints({
                 method: 'PATCH',
                 body: list
             }),
-            invalidatesTags: ['Lists']
+            invalidatesTags: (result, error, body) => [{ type: 'Lists', id: body.id }]
         }),
         deleteList: builder.mutation({
             query: ({ id }) => ({
                 url: `./lists/${id}`,
                 method: "DELETE"
             }),
-            invalidatesTags: ['Lists']
+            invalidatesTags: [{ type: 'Lists', id: 'PARTIAL-LISTS' }]
         }),
     }),
 });

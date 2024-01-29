@@ -15,7 +15,16 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
                 const sortedTodos = [...res].sort((a, b) => a.id - b.id);
                 return todosAdapter.setAll(initialState, sortedTodos);
             },
-            providesTags: ['Todos']
+            providesTags: (result) =>
+                result ?
+                    [
+                        ...result.ids.map((id) => ({ type: 'Todos', id })),
+                        { type: 'Todos', id: 'LIST' },
+                        { type: 'Todos', id: 'PARTIAL-TODOS' },
+                    ] : [
+                        { type: 'Todos', id: 'LIST' },
+                        { type: 'Todos', id: 'PARTIAL-TODOS' }
+                    ]
         }),
         addTodo: builder.mutation({
             query: (todo) => ({
@@ -23,7 +32,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 body: todo
             }),
-            invalidatesTags: ['Todos']
+            invalidatesTags: [{ type: 'Todos', id: 'LIST' }]
         }),
         updateTodo: builder.mutation({
             query: (todo) => ({
@@ -31,14 +40,14 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
                 method: 'PATCH',
                 body: todo
             }),
-            invalidatesTags: ['Todos']
+            invalidatesTags: (result, error, body) => [{ type: 'Todos', id: body.id }]
         }),
         deleteTodo: builder.mutation({
             query: ({ id }) => ({
                 url: `/todos/${id}`,
                 method: 'DELETE',
             }),
-            invalidatesTags: ['Todos']
+            invalidatesTags: [{ type: 'Todos', id: 'PARTIAL-TODOS' }]
         }),
         deleteTodos: builder.mutation({
             query: (ids) => ({
@@ -46,7 +55,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
                 method: 'DELETE',
                 body: { ids }
             }),
-            invalidatesTags: ['Todos']
+            invalidatesTags: [{ type: 'Todos', id: 'PARTIAL-TODOS' }]
         }),
     }),
 });

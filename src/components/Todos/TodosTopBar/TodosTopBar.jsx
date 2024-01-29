@@ -30,7 +30,6 @@ function TodosTopBar() {
     const list = useSelector((state) => selectListById(state, activeList));
 
     const idsToDelete = todos.map((todo) => todo.id);
-    const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
 
     const handleOpenModal = () => {
         setModalOpen(true);
@@ -38,6 +37,7 @@ function TodosTopBar() {
 
     const handleModalOk = async () => {
         setModalOpen(false);
+        const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
         await Promise.all(deletePromises);
         await deleteList({id: list.id});
         dispatch(changeListChoice(1));
