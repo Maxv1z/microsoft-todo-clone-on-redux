@@ -98,14 +98,21 @@ function Todo({todoId}) {
                     </span>
                 }
             >
-                {lists.map((list) => (
-                    <Menu.Item
-                        key={list.id}
-                        onClick={() => updateTodo({id: todoId, listId: list.id})}
-                    >
-                        {list.name}
-                    </Menu.Item>
-                ))}
+                {lists.map((list) => {
+                    const excluded = list.id == 1 || list.id == 2;
+
+                    return (
+                        !excluded && (
+                            <Menu.Item
+                                key={list.id}
+                                disabled={excluded}
+                                onClick={() => updateTodo({id: todoId, listId: list.id})}
+                            >
+                                {list.name}
+                            </Menu.Item>
+                        )
+                    );
+                })}
             </Menu.SubMenu>
             <Menu.Item
                 key="delete"

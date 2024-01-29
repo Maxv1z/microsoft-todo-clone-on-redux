@@ -225,17 +225,6 @@
       "completed": false
     },
     {
-      "id": "016Yr_2aG0J1h5oqdMtSn",
-      "createdAt": 1705914731846,
-      "title": "zzzxcvzxvc",
-      "notes": "",
-      "file": null,
-      "starred": true,
-      "listId": null,
-      "completed": false,
-      "finishAt": "2024-01-25T10:00:41.052Z"
-    },
-    {
       "id": "-kC-3USwQbfAhY_j-x718",
       "createdAt": 1706009577741,
       "title": "asdfasdfasdfasdf",
@@ -473,6 +462,17 @@
       "id": "P4y-Lfm4f9AotP5Hgn4Bg",
       "createdAt": 1706514839481,
       "title": "asdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "2",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "nFJb6NpOZnDZbIUwPjbRQ",
+      "createdAt": 1706515102531,
+      "title": "adsfasdfasdfasf",
       "notes": "",
       "file": null,
       "starred": false,
