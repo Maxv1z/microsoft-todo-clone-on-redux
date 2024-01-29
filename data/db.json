@@ -10,15 +10,15 @@
     },
     {
       "id": "3",
-      "name": "Personal Tasks"
+      "name": "Planned tasks"
     },
     {
       "id": "4",
-      "name": "Work Tasks "
+      "name": "Personal Tasks"
     },
     {
-      "id": "VIoUVzpmofTf-8KDZemWc",
-      "name": "asdfasdf"
+      "id": "5",
+      "name": "Work Tasks "
     }
   ],
   "todos": [
@@ -163,18 +163,6 @@
       "title": "adfsffffff"
     },
     {
-      "id": "WiJoSj9SXpuG_-gJ0lRCt",
-      "createdAt": 1705914633162,
-      "title": "zzzz",
-      "notes": "",
-      "file": null,
-      "starred": true,
-      "listId": null,
-      "completed": false,
-      "finishAt": "2024-01-24T10:00:43.324Z",
-      "timeToFinish": "2024-01-25T18:31:39.740Z"
-    },
-    {
       "id": "ZimpASHgF9xch2KTj1Pbx",
       "createdAt": 1705914677154,
       "title": "bbbbb",
@@ -233,8 +221,7 @@
       "starred": true,
       "listId": null,
       "completed": true,
-      "timeToFinish": null,
-      "finishAt": null
+      "timeToFinish": null
     },
     {
       "id": "C5YEkDLGHX_g1hXbleAf4",
@@ -437,28 +424,6 @@
       "title": ""
     },
     {
-      "id": "0nC-Grv_MH5UqNyAH8EGn",
-      "createdAt": "2024-01-28T16:34:41.663Z",
-      "title": "asdfasdfasdffff",
-      "notes": "ff",
-      "file": null,
-      "starred": false,
-      "listId": "1",
-      "completed": false,
-      "timeToFinish": "2024-01-28T16:34:41.663Z"
-    },
-    {
-      "id": "gHAwriAJfII2WFFdqPb10",
-      "createdAt": "2024-01-28T16:38:47.143Z",
-      "title": "asdfasdfasff",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "1",
-      "completed": false,
-      "timeToFinish": "2024-01-28T16:38:47.143Z"
-    },
-    {
       "id": "P4y-Lfm4f9AotP5Hgn4Bg",
       "createdAt": 1706514839481,
       "title": "asdf",
@@ -470,15 +435,147 @@
       "timeToFinish": null
     },
     {
-      "id": "nFJb6NpOZnDZbIUwPjbRQ",
-      "createdAt": 1706515102531,
-      "title": "adsfasdfasdfasf",
-      "notes": "",
+      "id": "U8nO6nLitJSKEq08_ET9T",
+      "createdAt": 1706515980011,
+      "title": "Wierd thing i have\n",
+      "notes": "ffafsff",
       "file": null,
       "starred": false,
       "listId": "4",
       "completed": false,
       "timeToFinish": null
+    },
+    {
+      "id": "JiGeZFXwwWm4UzQucJYng",
+      "createdAt": 1706516405082,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "90gycuAUWyeHRaGl941s2",
+      "createdAt": 1706516411681,
+      "title": "adsfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": true,
+      "listId": "3",
+      "completed": true,
+      "timeToFinish": "2024-01-31T08:21:26.871Z"
+    },
+    {
+      "id": "qI3pi9H0M58Ps-5QeIe-s",
+      "createdAt": 1706516459538,
+      "title": "adsfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": true,
+      "timeToFinish": "2024-01-31T08:21:22.627Z"
+    },
+    {
+      "id": "VnozuaShOaYCIqfkEsK5V",
+      "createdAt": 1706516498271,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "5",
+      "completed": true,
+      "timeToFinish": "2024-01-31T08:21:44.171Z"
+    },
+    {
+      "id": "KaGhyV_nUxRpCK6tBxAUK",
+      "createdAt": 1706517156239,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "5",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "2WSYH7GWzqlPUjVLgRtL0",
+      "createdAt": 1706517787363,
+      "title": "asdfasdfasf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-01-02T08:51:15.091Z"
+    },
+    {
+      "id": "1oqtnzEcEoJyovkySf1XL",
+      "createdAt": 1706518266162,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-01-29T08:51:06.161Z"
+    },
+    {
+      "id": "qQi4QSEqlHmG0Avoltg1J",
+      "createdAt": 1706518330592,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-01-02T08:52:14.538Z"
+    },
+    {
+      "id": "7xI4XRLlnOfz-X4Nam-Ey",
+      "createdAt": 1706518494991,
+      "title": "adfasdfasdfasfd",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-02-10T08:54:59.103Z"
+    },
+    {
+      "id": "3CBbmQqX-ZnBOpPIgHPfe",
+      "createdAt": 1706518720560,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-01-03T08:58:47.115Z"
+    },
+    {
+      "id": "oe8BhNGzOLSfvNj2tPqHz",
+      "createdAt": 1706519024847,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": null
+    },
+    {
+      "id": "XcBzosTOmwEtY0QGC77d7",
+      "createdAt": 1706519040866,
+      "title": "adsfasdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-02-29T09:04:04.329Z"
     }
   ]
 }

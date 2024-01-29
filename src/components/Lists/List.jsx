@@ -69,7 +69,7 @@ function List({listId}) {
 
     const menu = (
         <>
-            {list.id != 1 && list.id != 2 && (
+            {list.id != 1 && list.id != 2 && list.id != 3 && (
                 <Menu>
                     <Menu.Item key="rename" onClick={handleRenameClick}>
                         Rename list

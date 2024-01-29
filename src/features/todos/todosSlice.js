@@ -160,3 +160,24 @@ export const selectUncompletedTodosForToday = createSelector(
             .map((todo) => todo.id);
     }
 );
+
+
+export const selectUncompletedPlannedTodos = createSelector(
+    [selectAllTodos],
+    (allTodos) => {
+        return allTodos
+            .filter((todo) => todo.timeToFinish != null && todo.completed == false)
+            .map((todo) => ({
+                id: todo.id,
+                timeToFinish: todo.timeToFinish,
+            }));
+    }
+)
+export const selectCompletedPlannedTodos = createSelector(
+    [selectAllTodos],
+    (allTodos) => {
+        return allTodos
+            .filter((todo) => todo.timeToFinish != null && todo.completed == true)
+            .map((todo) => todo.id);
+    }
+)

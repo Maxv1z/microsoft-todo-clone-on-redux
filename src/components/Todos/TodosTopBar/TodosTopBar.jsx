@@ -71,44 +71,48 @@ function TodosTopBar() {
     };
 
     const menu = (
-        <Menu>
-            {list.id != 1 && list.id != 2 && (
-                <Menu.Item key="rename">Rename list</Menu.Item>
+        <>
+            {list.id != 3 && (
+                <Menu>
+                    {list.id != 1 && list.id != 2 && (
+                        <Menu.Item key="rename">Rename list</Menu.Item>
+                    )}
+                    <Menu.SubMenu key="submenu" title="Sorting...">
+                        <Menu.Item
+                            key="createdAt"
+                            onClick={() => dispatch(changeSortingCriteria("createdAt"))}
+                            style={menuItemStyle}
+                        >
+                            Sort by date
+                        </Menu.Item>
+                        <Menu.Item
+                            key="title"
+                            onClick={() => dispatch(changeSortingCriteria("title"))}
+                            style={menuItemStyle}
+                        >
+                            Sort by title
+                        </Menu.Item>
+                        <Menu.Item
+                            key="star"
+                            onClick={() => dispatch(changeSortingCriteria("starred"))}
+                            style={menuItemStyle}
+                        >
+                            Sort by star
+                        </Menu.Item>
+                    </Menu.SubMenu>
+                    {list.id != 1 && list.id != 2 && (
+                        <Menu.Item
+                            key="delete"
+                            danger
+                            style={{borderTop: "1px solid gray"}}
+                            onClick={handleOpenModal}
+                        >
+                            Delete List
+                        </Menu.Item>
+                    )}
+                </Menu>
             )}
-            <Menu.SubMenu key="submenu" title="Sorting...">
-                <Menu.Item
-                    key="createdAt"
-                    onClick={() => dispatch(changeSortingCriteria("createdAt"))}
-                    style={menuItemStyle}
-                >
-                    Sort by date
-                </Menu.Item>
-                <Menu.Item
-                    key="title"
-                    onClick={() => dispatch(changeSortingCriteria("title"))}
-                    style={menuItemStyle}
-                >
-                    Sort by title
-                </Menu.Item>
-                <Menu.Item
-                    key="star"
-                    onClick={() => dispatch(changeSortingCriteria("starred"))}
-                    style={menuItemStyle}
-                >
-                    Sort by star
-                </Menu.Item>
-            </Menu.SubMenu>
-            {list.id != 1 && list.id != 2 && (
-                <Menu.Item
-                    key="delete"
-                    danger
-                    style={{borderTop: "1px solid gray"}}
-                    onClick={handleOpenModal}
-                >
-                    Delete List
-                </Menu.Item>
-            )}
-        </Menu>
+        </>
     );
 
     return (
