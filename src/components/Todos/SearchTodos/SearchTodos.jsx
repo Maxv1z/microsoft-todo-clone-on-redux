@@ -1,12 +1,10 @@
-import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import Todo from "../Todo/Todo";
 import {useGetTodosQuery, selectAllTodos} from "../../../features/todos/todosSlice";
-
-import {selectSearchText} from "../../../features/isSearching/searchingSlice";
+import {selectSearchText} from "../../../features/search/searchingSlice";
 
 function TodoList() {
-    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
+    const {isLoading, isError, error} = useGetTodosQuery();
 
     const searchText = useSelector(selectSearchText);
     const allTodos = useSelector(selectAllTodos);

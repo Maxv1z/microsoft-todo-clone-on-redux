@@ -15,7 +15,7 @@ import {
     selectSearchText,
     changeSearchState,
     changeIsSearch,
-} from "../../features/isSearching/searchingSlice";
+} from "../../features/search/searchingSlice";
 
 function Lists() {
     const dispatch = useDispatch(); // Dispatch function

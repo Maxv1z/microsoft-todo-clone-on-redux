@@ -17,7 +17,7 @@ import TodayTodos from "../TodayTodos/TodayTodos";
 import StarredTodos from "../StarredTodos/StarredTodos";
 import PlannedTodos from "../PlannedTodos/PlannedTodos";
 import SearchTodos from "../SearchTodos/SearchTodos";
-import {selectIsSearch} from "../../../features/isSearching/searchingSlice";
+import {selectIsSearch} from "../../../features/search/searchingSlice";
 
 function TodoList() {
     const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
@@ -49,17 +49,19 @@ function TodoList() {
 
     const handleAddTask = (e) => {
         e.preventDefault();
-        addTodo({
-            id: nanoid(),
-            createdAt: Date.now(),
-            title: title,
-            notes: "",
-            file: null,
-            starred: false,
-            listId: activeList,
-            completed: false,
-            timeToFinish: null,
-        });
+        if (title.trim() != "") {
+            addTodo({
+                id: nanoid(),
+                createdAt: Date.now(),
+                title: title,
+                notes: "",
+                file: null,
+                starred: false,
+                listId: activeList,
+                completed: false,
+                timeToFinish: null,
+            });
+        }
         setTitle("");
     };
 

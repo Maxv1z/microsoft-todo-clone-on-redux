@@ -1,13 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { createLogger } from 'redux-logger';
 import { apiSlice } from '../api/apiSlice';
 
 import chosenListReducer from '../features/chosenList/chosenListSlice';
 import activeTodoReducer from "../features/activeTodo/activeTodoSlice";
 import sortingCriteriaReducer from "../features/sortingCriteria/sortingCriteriaSlice";
-import searchingReducer from "../features/isSearching/searchingSlice";
+import searchingReducer from "../features/search/searchingSlice";
 
-const logger = createLogger({});
 
 export const store = configureStore({
     reducer: {
