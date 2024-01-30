@@ -7,7 +7,7 @@ const activeTodoSlice = createSlice({
     initialState,
     reducers: {
         changeActiveTodo: (state, action) => {
-            if (state.activeTodoId === action.payload && state.activeTodoId !== null) {
+            if (state.activeTodoId == action.payload && state.activeTodoId !== null) {
                 return { ...state, activeTodoId: null };
             } else {
                 return { ...state, activeTodoId: action.payload };

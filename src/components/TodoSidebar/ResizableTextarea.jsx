@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useLayoutEffect, useEffect} from "react";
 import {useSelector} from "react-redux";
 import {selectTodoById, useUpdateTodoMutation} from "../../features/todos/todosSlice"; // Assuming you have an updateTodoNotes action creator
 
@@ -7,7 +7,16 @@ function ResizableTextarea({todoId}) {
     const [updateTodo] = useUpdateTodoMutation();
 
     const todo = useSelector((state) => selectTodoById(state, todoId));
-    const [notes, setNotes] = useState(todo.notes); // Local state for managing changes
+    const [notes, setNotes] = useState("");
+
+    // update local notes value when todoId is changed
+    useEffect(() => {
+        setNotes(todo.notes || "");
+    }, [todoId]);
+
+    useLayoutEffect(() => {
+        adjustHeight();
+    }, [notes]);
 
     function adjustHeight() {
         textbox.current.style.height = "inherit";

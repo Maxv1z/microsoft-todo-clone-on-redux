@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from '../api/apiSlice'
+import { createLogger } from 'redux-logger';
+import { apiSlice } from '../api/apiSlice';
 
-import chosenListReducer from '../features/chosenList/chosenListSlice'
+import chosenListReducer from '../features/chosenList/chosenListSlice';
 import activeTodoReducer from "../features/activeTodo/activeTodoSlice";
 import sortingCriteriaReducer from "../features/sortingCriteria/sortingCriteriaSlice";
 import searchingReducer from "../features/isSearching/searchingSlice";
+
+const logger = createLogger({});
 
 export const store = configureStore({
     reducer: {
@@ -15,4 +18,4 @@ export const store = configureStore({
         search: searchingReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
-})
+});
