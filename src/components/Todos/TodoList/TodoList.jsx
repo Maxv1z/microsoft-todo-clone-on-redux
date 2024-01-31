@@ -20,19 +20,22 @@ import SearchTodos from "../SearchTodos/SearchTodos";
 import {selectIsSearch} from "../../../features/search/searchingSlice";
 
 function TodoList() {
-    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
-    const [addTodo] = useAddTodoMutation();
-    const activeList = useSelector(selectActiveList);
-    const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
+    const [title, setTitle] = useState("");
+
+    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
+
+    const [addTodo] = useAddTodoMutation();
+
+    const activeList = useSelector(selectActiveList);
     const sortCriteria = useSelector(selectSortingCriteria);
     const isSearch = useSelector(selectIsSearch);
-
     // fetching completed todos to show
     const completedTodos = useSelector(selectCompletedTodos);
     // fetching uncompleted todos to show on button click
     const uncompletedTodos = useSelector(selectUncompletedTodos);
 
+    /// showing chosen lists based on loading state + state of activeList
     if (isLoading) {
         return <p>Loading...</p>;
     } else if (isError) {
@@ -47,6 +50,9 @@ function TodoList() {
         return <PlannedTodos />;
     }
 
+    ///////
+    // Add new todo to activeTodoList
+    ///////
     const handleAddTask = (e) => {
         e.preventDefault();
         if (title.trim() != "") {
@@ -64,7 +70,10 @@ function TodoList() {
         }
         setTitle("");
     };
+    ///////
+    ///////
 
+    //// sort function for unCompleted todos based on sortCriteria (local store value)
     const sortTodos = (uncompletedTodos) => {
         return [...uncompletedTodos].sort((a, b) => {
             if (sortCriteria == "createdAt") {

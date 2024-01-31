@@ -505,17 +505,6 @@
       "timeToFinish": "2024-01-02T08:52:14.538Z"
     },
     {
-      "id": "7xI4XRLlnOfz-X4Nam-Ey",
-      "createdAt": 1706518494991,
-      "title": "adfasdfasdfasfd",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "3",
-      "completed": false,
-      "timeToFinish": "2024-02-10T08:54:59.103Z"
-    },
-    {
       "id": "3CBbmQqX-ZnBOpPIgHPfe",
       "createdAt": 1706518720560,
       "title": "asdfasdfasdf",
@@ -538,17 +527,6 @@
       "timeToFinish": "2024-01-29T10:10:46.912Z"
     },
     {
-      "id": "XcBzosTOmwEtY0QGC77d7",
-      "createdAt": 1706519040866,
-      "title": "adsfasdfasdfasdf",
-      "notes": "",
-      "file": null,
-      "starred": false,
-      "listId": "3",
-      "completed": false,
-      "timeToFinish": "2024-02-29T09:04:04.329Z"
-    },
-    {
       "id": "fYNKKSgbIzd2IUP2apROv",
       "createdAt": 1706522850281,
       "title": "New text",
@@ -569,6 +547,17 @@
       "listId": "9l9sIlPoPTVfBtsuiwaoG",
       "completed": false,
       "timeToFinish": null
+    },
+    {
+      "id": "GuUPus1PhMqmrHG-E8X6r",
+      "createdAt": 1706699884903,
+      "title": "asdfasdfasdf",
+      "notes": "",
+      "file": null,
+      "starred": false,
+      "listId": "3",
+      "completed": false,
+      "timeToFinish": "2024-01-31T11:18:04.903Z"
     }
   ]
 }

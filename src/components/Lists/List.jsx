@@ -17,6 +17,9 @@ import "./List.style.scss";
 import {Dropdown, Menu, Input, Modal} from "antd";
 
 function List({listId}) {
+    const dispatch = useDispatch();
+    const [isModalOpen, setModalOpen] = useState(false);
+
     const [deleteList] = useDeleteListMutation();
     const [updateList] = useUpdateListMutation();
     const [deleteTodo] = useDeleteTodoMutation();
@@ -24,19 +27,18 @@ function List({listId}) {
     const [editing, setEditing] = useState(false);
     const [newName, setNewName] = useState("");
 
-    const dispatch = useDispatch();
-
     const todos = useSelector(selectTodosByListId);
+    const list = useSelector((state) => selectListById(state, listId));
 
-    const [isModalOpen, setModalOpen] = useState(false);
-
+    ///////////
+    // work with modal to delete list together with its todos async
+    ///////////
     const handleOpenModal = () => {
         setModalOpen(true);
     };
-
+    // on 'Delete' button click. Closes the modal, gets ids from that list, asyncly deletes each todo
     const handleModalOk = async () => {
         setModalOpen(false);
-
         const idsToDelete = todos.map((todo) => todo.id);
         const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
         await Promise.all(deletePromises);
@@ -49,14 +51,18 @@ function List({listId}) {
     const handleModalCancel = () => {
         setModalOpen(false);
     };
+    ///////////
+    ///////////
 
-    const list = useSelector((state) => selectListById(state, listId));
-
+    // filter change
     const handleFilterChange = (listId) => {
         dispatch(changeListChoice(listId));
         dispatch(changeActiveTodo(null));
     };
 
+    ///////////
+    // work with renaming list
+    ///////////
     const handleRenameClick = () => {
         setEditing(true);
         setNewName(list.name);
@@ -66,7 +72,10 @@ function List({listId}) {
         setEditing(false);
         updateList({id: listId, name: newName});
     };
+    ///////////
+    ///////////
 
+    // menu for dropdown menu to work with particular list
     const menu = (
         <>
             {list.id != 1 && list.id != 2 && list.id != 3 && (

@@ -9,16 +9,16 @@ function TodoList() {
     const searchText = useSelector(selectSearchText);
     const allTodos = useSelector(selectAllTodos);
 
+    // Filter todos based on search query
+    const filteredTodos = allTodos.filter((todo) =>
+        todo.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+
     if (isLoading) {
         return <p>Loading...</p>;
     } else if (isError) {
         return <p>{error.message}</p>;
     }
-
-    // Filter todos based on search query
-    const filteredTodos = allTodos.filter((todo) =>
-        todo.title.toLowerCase().includes(searchText.toLowerCase())
-    );
 
     return (
         <div className="todos-main-container">

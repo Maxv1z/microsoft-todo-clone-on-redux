@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
     selectTodoById,
@@ -6,7 +5,7 @@ import {
     useDeleteTodoMutation,
 } from "../../../features/todos/todosSlice";
 import "./Todo.style.scss";
-import {Dropdown, Menu, DatePicker, Tooltip} from "antd";
+import {Dropdown, Menu, DatePicker} from "antd";
 import {selectAllLists} from "../../../features/lists/listsSlice";
 import {
     DeleteOutlined,
@@ -20,28 +19,33 @@ import {changeActiveTodo} from "../../../features/activeTodo/activeTodoSlice";
 import {StarFilled, StarOutlined} from "@ant-design/icons";
 
 function Todo({todoId}) {
-    const [deleteTodo] = useDeleteTodoMutation();
-    const [updateTodo] = useUpdateTodoMutation();
-    const lists = useSelector(selectAllLists);
     const dispatch = useDispatch();
 
+    const lists = useSelector(selectAllLists);
     const todo = useSelector((state) => selectTodoById(state, todoId));
 
+    const [deleteTodo] = useDeleteTodoMutation();
+    const [updateTodo] = useUpdateTodoMutation();
+
+    ///////
+    //actions with todo
+    //////
     const handleDatePickerChange = async (date) => {
         updateTodo({
             id: todoId,
             timeToFinish: date,
         });
     };
-
     const handleToggleTodo = async () => {
         updateTodo({id: todoId, completed: !todo.completed});
     };
-
     const handleStarTodo = async () => {
         updateTodo({id: todoId, starred: !todo.starred});
     };
+    ///////
+    ///////
 
+    // dropdown menu for Todo
     const menu = (
         <Menu>
             <Menu.Item

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import Todo from "../Todo/Todo";
 import {nanoid} from "nanoid";
 import {
@@ -10,31 +10,24 @@ import {
 } from "../../../features/todos/todosSlice";
 import {selectActiveList} from "../../../features/chosenList/chosenListSlice";
 import TodosTopBar from "../TodosTopBar/TodosTopBar";
-import {
-    changeSortingCriteria,
-    selectSortingCriteria,
-} from "../../../features/sortingCriteria/sortingCriteriaSlice";
 
 import "../TodoList/TodoList.style.scss";
 
 function PlannedTodos() {
-    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
-    const [addTodo] = useAddTodoMutation();
-    const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
 
+    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
+
+    const [addTodo] = useAddTodoMutation();
+    const activeList = useSelector(selectActiveList);
     // fetching completed todos to show
     const uncompletedPlannedTodos = useSelector(selectUncompletedPlannedTodos);
-
     const completedPlannedTodos = useSelector(selectCompletedPlannedTodos);
 
-    if (isLoading) {
-        return <p>Loading...</p>;
-    } else if (isError) {
-        return <p>{error.message}</p>;
-    }
-
+    ///////
+    // Add new todo to plannedList with - timeToFinish: Today
+    ///////
     const handleAddTask = (e) => {
         e.preventDefault();
         const currentDate = new Date();
@@ -53,12 +46,21 @@ function PlannedTodos() {
         });
         setTitle("");
     };
+    ///////
+    ///////
 
+    // sort every todo based on what date it was created (earliest - bottom)
     const sortTodos = (todos) => {
         return [...todos].sort((a, b) => {
             return new Date(a.timeToFinish) - new Date(b.timeToFinish);
         });
     };
+
+    if (isLoading) {
+        return <p>Loading...</p>;
+    } else if (isError) {
+        return <p>{error.message}</p>;
+    }
 
     return (
         <div className="todos-main-container">

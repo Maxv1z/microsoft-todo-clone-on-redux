@@ -14,15 +14,16 @@ import {selectSortingCriteria} from "../../../features/sortingCriteria/sortingCr
 import "../TodoList/TodoList.style.scss";
 
 function TodayTodos() {
-    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
-    const [addTodo] = useAddTodoMutation();
-    const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
-    const sortCriteria = useSelector(selectSortingCriteria);
 
+    const {isLoading, isSuccess, isError, error} = useGetTodosQuery();
+
+    const [addTodo] = useAddTodoMutation();
+
+    const activeList = useSelector(selectActiveList);
+    const sortCriteria = useSelector(selectSortingCriteria);
     // fetching completed todos to show
     const starredTodos = useSelector(selectStarredTodos);
-    console.log("STARRED TODOS", starredTodos);
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -30,6 +31,9 @@ function TodayTodos() {
         return <p>{error.message}</p>;
     }
 
+    ///////
+    // Add new todo to StarredTodos with - starred: true
+    ///////
     const handleAddTask = (e) => {
         e.preventDefault();
         addTodo({
@@ -45,13 +49,17 @@ function TodayTodos() {
         });
         setTitle("");
     };
+    ///////
+    ///////
 
+    //// sort function for unCompleted todos based on sortCriteria (local store value)
     const sortTodos = (starredTodos) => {
         return [...starredTodos].sort((a, b) => {
             if (sortCriteria === "createdAt") {
                 return b.createdAt - a.createdAt;
             } else if (sortCriteria === "title") {
                 return a.title.localeCompare(b.title);
+                /// not including starred sorting
             } else {
                 return starredTodos;
             }

@@ -18,18 +18,21 @@ import {
 } from "../../features/search/searchingSlice";
 
 function Lists() {
-    const dispatch = useDispatch(); // Dispatch function
+    const dispatch = useDispatch();
 
-    let content;
+    let content; // for different cases of fetching
     const {isLoading, isSuccess, isError, error} = useGetListsQuery();
-    const lists = useSelector(selectListsIds);
+
     const [addList] = useAddListMutation();
+
+    const lists = useSelector(selectListsIds);
     const activeListId = useSelector(selectActiveList);
     const searchText = useSelector(selectSearchText);
 
+    // searching field function
     const handleSearchInputChange = (e) => {
         const inputValue = e.target.value;
-
+        // enable search on typing
         if (inputValue.trim() == "") {
             dispatch(changeIsSearch(false));
             dispatch(changeSearchState(""));

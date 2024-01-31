@@ -1,7 +1,4 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
-
-import { selectAllLists } from '../lists/listsSlice';
 
 const initialState = { filter: '1' };
 

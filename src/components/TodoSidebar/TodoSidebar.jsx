@@ -13,12 +13,15 @@ import {changeActiveTodo} from "../../features/activeTodo/activeTodoSlice";
 
 function TodoSidebar({activeTodo}) {
     const dispatch = useDispatch();
+
     const [updateTodo] = useUpdateTodoMutation();
     const [deleteTodo] = useDeleteTodoMutation();
+
     const todo = useSelector((state) => selectTodoById(state, activeTodo));
 
     const dateObject = new Date(todo.createdAt);
 
+    /// toggle todo from sidebar
     const handleToggleTodo = async () => {
         updateTodo({id: activeTodo, completed: !todo.completed});
     };

@@ -15,13 +15,15 @@ import {selectSortingCriteria} from "../../../features/sortingCriteria/sortingCr
 import "../TodoList/TodoList.style.scss";
 
 function TodayTodos() {
-    const {isLoading, isError, error} = useGetTodosQuery();
-    const [addTodo] = useAddTodoMutation();
-    const activeList = useSelector(selectActiveList);
     const [title, setTitle] = useState("");
     const [showCompletedTodos, setShowCompletedTodos] = useState(false);
-    const sortCriteria = useSelector(selectSortingCriteria);
 
+    const {isLoading, isError, error} = useGetTodosQuery();
+
+    const [addTodo] = useAddTodoMutation();
+
+    const activeList = useSelector(selectActiveList);
+    const sortCriteria = useSelector(selectSortingCriteria);
     // fetching completed todos to show
     const completedTodos = useSelector(selectCompletedTodosForToday);
     // fetching uncompleted todos to show on button click
@@ -33,6 +35,9 @@ function TodayTodos() {
         return <p>{error.message}</p>;
     }
 
+    ///////
+    // Add new todo to TodayTodo with - timeToFinish: today
+    ///////
     const handleAddTask = (e) => {
         e.preventDefault();
 
@@ -52,7 +57,10 @@ function TodayTodos() {
 
         setTitle("");
     };
+    ///////
+    ///////
 
+    //// sort function for unCompleted todos based on sortCriteria (local store value)
     const sortTodos = (uncompletedTodos) => {
         return [...uncompletedTodos].sort((a, b) => {
             if (sortCriteria === "createdAt") {

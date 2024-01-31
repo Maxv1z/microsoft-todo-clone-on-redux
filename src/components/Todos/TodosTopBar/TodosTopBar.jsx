@@ -18,11 +18,11 @@ import {changeActiveTodo} from "../../../features/activeTodo/activeTodoSlice";
 import {Modal} from "antd";
 
 function TodosTopBar() {
+    const [isModalOpen, setModalOpen] = useState(false);
     const {isLoading, error} = useGetListsQuery();
+
     const [deleteList] = useDeleteListMutation();
     const [deleteTodo] = useDeleteTodoMutation();
-
-    const [isModalOpen, setModalOpen] = useState(false);
 
     const activeList = useSelector(selectActiveList);
     const dispatch = useDispatch();
@@ -31,10 +31,13 @@ function TodosTopBar() {
 
     const idsToDelete = todos.map((todo) => todo.id);
 
+    ///////
+    // work with deleting list from TodosTopBar
+    ///////
     const handleOpenModal = () => {
         setModalOpen(true);
     };
-
+    // same function as in Lists component
     const handleModalOk = async () => {
         setModalOpen(false);
         const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
@@ -43,28 +46,17 @@ function TodosTopBar() {
         dispatch(changeListChoice(1));
         dispatch(changeActiveTodo(null));
     };
-
     const handleModalCancel = () => {
         setModalOpen(false);
     };
+    ////////
+    ////////
 
     if (isLoading) {
         return <>Loading...</>;
     } else if (error) {
         return <>{error}</>;
     }
-
-    // const onDeleteList = async () => {
-    //     const idsToDelete = todos.map((todo) => todo.id);
-    //     // Use map to create an array of Promises for each deleteTodo call
-    //     const deletePromises = idsToDelete.map((id) => deleteTodo({id: id}));
-    //     // Wait for all todo deletions to complete
-    //     await Promise.all(deletePromises);
-    //     // Continue with the rest of the code
-    //     await deleteList({id: list.id});
-    //     dispatch(changeListChoice(1));
-    //     dispatch(changeActiveTodo(null));
-    // };
 
     const menuItemStyle = {
         width: "300px",
